@@ -3,10 +3,10 @@ export function initHeroSlider() {
   if (!video) return;
 
   const playlist = [
-    './Videos/video1.mp4',
-    './Videos/video2.mp4',
-    './Videos/video3.mp4',
-    './Videos/antesydespues.mp4'
+    '/Videos/video1.mp4',
+    '/Videos/video2.mp4',
+    '/Videos/video3.mp4',
+    '/Videos/antesydespues.mp4'
   ];
 
   let currentIndex = 0;
