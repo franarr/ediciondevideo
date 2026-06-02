@@ -921,10 +921,16 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   transition: opacity 0.2s ease;
   pointer-events: none;
 }
-.video-viewport-container:hover .viewport-overlay,
 .video-viewport-container.is-paused .viewport-overlay {
   opacity: 1;
   pointer-events: auto;
+}
+
+@media (hover: hover) {
+  .video-viewport-container:hover .viewport-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .viewport-play-btn {
