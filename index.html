@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabaña & Arellano — Editores de Video & Manejo de Redes</title>
+  <meta name="description" content="Francisco Arellano y Alejo Cabaña. Editores de video y creadores de contenido de Santa Fe, Argentina. Especialistas en Reels, TikToks, Motion Graphics estilo VOX y UGC.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS (no Bootstrap — pure custom) -->
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body id="body-main">
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain"></div>
+
+  <!-- Custom Cursor (desktop only) -->
+  <div class="custom-cursor" id="custom-cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle">
+      <span class="cursor-text">PLAY</span>
+    </div>
+  </div>
+
+  <!-- ─── NAVBAR ─── -->
+  <header class="navbar-container" id="site-header">
+    <nav class="navbar">
+      <a href="#" class="brand-logo magnetic" id="nav-logo">
+        CABAÑA <span class="amp">&</span> ARELLANO
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link-item magnetic">Inicio</a></li>
+        <li><a href="#nosotros" class="nav-link-item magnetic">Nosotros</a></li>
+        <li><a href="#estudio" class="nav-link-item magnetic">Estudio</a></li>
+        <li><a href="#servicios" class="nav-link-item magnetic">Servicios</a></li>
+        <li><a href="#contacto" class="nav-link-item magnetic">Contacto</a></li>
+      </ul>
+      <a href="#contacto" class="btn btn-cta magnetic" id="nav-cta-btn">Hablemos</a>
+    </nav>
+  </header>
+
+  <!-- ─── MAIN CONTENT ─── -->
+  <main id="scroll-container">
+
+    <!-- ═══════════ HERO SECTION ═══════════ -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left: Text -->
+          <div class="hero-text">
+            <div class="location-tag">[ SANTA FE, ARGENTINA ]</div>
+            
+            <h1 class="hero-title">
+              <span class="title-line"><span class="title-word">EDITORES</span></span>
+              <span class="title-line"><span class="title-word"><span class="highlight-yellow">DE VIDEO</span></span></span>
+              <span class="title-line">
+                <span class="title-word amp-word"><span class="amp">y</span></span>
+                <span class="title-word"><span class="highlight-red">REDES</span></span>
+              </span>
+            </h1>
+
+            <h2 class="hero-subtitle">Francisco Arellano & Alejo Cabaña</h2>
+            
+            <p class="hero-desc">
+              Somos un equipo complementario de Santa Fe. Ambos manejamos las mismas herramientas y alternamos tareas para estar siempre conectados y respondiendo tus mensajes. Hacemos que tu material destaque con <span class="hl-yellow-text">edición sólida</span>, <span class="hl-red-text">ganchos de retención</span> y estrategia orgánica real.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#estudio" class="btn btn-primary magnetic">Ver Línea de Tiempo</a>
+              <a href="#contacto" class="btn btn-outline magnetic">Iniciar Proyecto</a>
+            </div>
+          </div>
+          
+          <!-- Right: Video Carousel -->
+          <div class="hero-video">
+            <div class="hero-reel-single">
+              <div class="film-card">
+                <div class="film-card-video">
+                  <video class="hero-reel-player" playsinline muted autoplay preload="metadata"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ BRANDS MARQUEE ═══════════ -->
+    <div class="brands-marquee">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>Tienda de mascotas</span><span class="sep">///</span>
+          <span>Marcas Personales</span><span class="sep">///</span>
+          <span>Financieros</span><span class="sep">///</span>
+          <span>Empresas Tech & Software</span><span class="sep">///</span>
+          <span>Sector Educativo</span><span class="sep">///</span>
+          <span>Área Vehicular</span><span class="sep">///</span>
+          <span>Emprendimientos</span><span class="sep">///</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span>Tienda de mascotas</span><span class="sep">///</span>
+          <span>Marcas Personales</span><span class="sep">///</span>
+          <span>Financieros</span><span class="sep">///</span>
+          <span>Empresas Tech & Software</span><span class="sep">///</span>
+          <span>Sector Educativo</span><span class="sep">///</span>
+          <span>Área Vehicular</span><span class="sep">///</span>
+          <span>Emprendimientos</span><span class="sep">///</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════ NOSOTROS SECTION ═══════════ -->
+    <section id="nosotros" class="nosotros-section">
+      <div class="container">
+        <span class="section-tag">[ EL EQUIPO ]</span>
+        <h2 class="section-title nosotros-title">UN POCO DE NOSOTROS</h2>
+
+        <div class="nosotros-stage">
+          <!-- Scattered text labels (positioned around the photo) -->
+          <div class="floating-label fl-1">CAPCUT</div>
+          <div class="floating-label fl-2">FIGMA</div>
+          <div class="floating-label fl-3">CANVA</div>
+          <div class="floating-label fl-4 serif-label">edición de video</div>
+          <div class="floating-label fl-5">REELS</div>
+          <div class="floating-label fl-6">TIKTOKS</div>
+          <div class="floating-label fl-7 serif-label">motion graphics</div>
+          <div class="floating-label fl-8">UGC</div>
+          <div class="floating-label fl-9">SUBTITULOS<br>DINÁMICOS</div>
+          <div class="floating-label fl-10">SFX &<br>VOZ EN OFF</div>
+          <div class="floating-label fl-11 serif-label">manejo de redes</div>
+          <div class="floating-label fl-12">B-ROLLS</div>
+          <div class="floating-label fl-13">GEMINI PRO<br>GPT PRO</div>
+          <div class="floating-label fl-14">REMOTION</div>
+
+          <!-- Photo container -->
+          <div class="nosotros-photo-wrapper">
+            <div class="nosotros-photo active" id="photo-alejo">
+              <img src="./images/alejosinfondo.png" alt="Alejo Cabaña">
+              <div class="photo-name">Alejo Cabaña</div>
+              <div class="role-tags" aria-label="Roles de Alejo">
+                <span class="role-tag">Comunicador</span>
+                <span class="role-tag">UGC</span>
+                <span class="role-tag">Diseñador</span>
+                <span class="role-tag">Editor</span>
+                <span class="role-tag">Motion Graphic</span>
+              </div>
+            </div>
+            <div class="nosotros-photo" id="photo-francisco">
+              <img src="./images/fransinfondo.png" alt="Francisco Arellano">
+              <div class="photo-name">Francisco Arellano</div>
+              <div class="role-tags" aria-label="Roles de Francisco">
+                <span class="role-tag">Profesor</span>
+                <span class="role-tag">Cartografo</span>
+                <span class="role-tag">Diseñador</span>
+                <span class="role-tag">Editor</span>
+                <span class="role-tag">Comunicador</span>
+                <span class="role-tag">Investigador</span>
+                <span class="role-tag">Datos</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Navigation arrows -->
+          <div class="nosotros-nav">
+            <button class="nosotros-arrow nosotros-prev magnetic" aria-label="Anterior">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="nosotros-arrow nosotros-next magnetic" aria-label="Siguiente">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ESTUDIO / TIMELINE SECTION ═══════════ -->
+    <section id="estudio" class="estudio-section">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header-row">
+          <div class="section-header-text">
+            <span class="section-tag">[ EL ESTUDIO / INTERACTIVO ]</span>
+            <h2 class="section-title">Mesa de <em class="serif"><span class="highlight-yellow">trabajo</span></em> activa</h2>
+            <p class="section-desc">
+              Usa nuestra línea de tiempo interactiva. Haz clic en las pistas de video para alternar entre los proyectos reales que editamos y observa cómo estructuramos los cortes, efectos y audios.
+            </p>
+          </div>
+          <div class="section-header-badge">
+            <div class="editor-status-badge">
+              <span class="status-pulse"></span>
+              <span class="status-text" id="active-track-name">PROYECTO_1.mp4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editor Desktop Mockup -->
+        <div class="editor-desktop">
+          <div class="editor-titlebar">
+            <div class="editor-dots">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            <div class="editor-titlebar-text">CABAÑA_ARELLANO_EDITOR_BAY_V1.0</div>
+            <div class="editor-timecode" id="editor-timer">00:00:00:00</div>
+          </div>
+
+          <div class="editor-body">
+            <!-- Video Viewport -->
+            <div class="editor-viewport">
+              <div class="video-viewport-container">
+                <video id="editor-video" playsinline muted loop src="">
+                  Tu navegador no soporta video.
+                </video>
+                
+                <div class="viewport-overlay">
+                  <button class="viewport-play-btn" id="video-play-btn">
+                    <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <svg class="overlay-pause-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+                      <rect x="6" y="4" width="4" height="16"></rect>
+                      <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                  </button>
+                </div>
+                
+                <div class="sound-toggle" id="sound-indicator">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  </svg>
+                  AUDIO DESMUTEAR
+                </div>
+              </div>
+            </div>
+
+            <!-- Inspector Panel -->
+            <div class="editor-inspector">
+              <div class="inspector-content">
+                <div class="inspector-section">
+                  <h4 class="inspector-title">[ DATOS DEL PROYECTO ]</h4>
+                  <div class="inspector-row">
+                    <span class="inspector-label">Archivo</span>
+                    <span class="inspector-value" id="inspect-project">video1.mp4</span>
+                  </div>
+                  <div class="inspector-row">
+                    <span class="inspector-label">Estrategia</span>
+                    <span class="inspector-value" id="inspect-tools">Reels & Retención</span>
+                  </div>
+                  <div class="inspector-row">
+                    <span class="inspector-label">Herramientas</span>
+                    <span class="inspector-value" id="inspect-retention">CapCut / Figma / Canva</span>
+                  </div>
+                </div>
+
+                <div class="inspector-section">
+                  <h4 class="inspector-title">[ COMPONENTES CLAVE ]</h4>
+                  <div class="fx-slider-item">
+                    <div class="fx-slider-row">
+                      <span>EDICIÓN DE RITMO</span>
+                      <span id="slider-val-color">95%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-fill" id="fill-color" style="width: 95%;"></div></div>
+                  </div>
+                  <div class="fx-slider-item">
+                    <div class="fx-slider-row">
+                      <span>DISEÑO DE AUDIO & SFX</span>
+                      <span id="slider-val-fx">90%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-fill" id="fill-fx" style="width: 90%;"></div></div>
+                  </div>
+                  <div class="fx-slider-item">
+                    <div class="fx-slider-row">
+                      <span>SUBTÍTULOS DINÁMICOS</span>
+                      <span id="slider-val-sfx">85%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-fill" id="fill-sfx" style="width: 85%;"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="inspector-footer">FLUJO COMPLEMENTARIO C&A</div>
+            </div>
+          </div>
+
+          <!-- Timeline Tracks -->
+          <div class="editor-timeline">
+            <div class="timeline-ruler">
+              <span>00:00:00</span><span>00:00:03</span><span>00:00:06</span><span>00:00:09</span><span>00:00:12</span><span>00:00:15</span>
+            </div>
+            <div class="timeline-tracks-wrapper">
+              <div class="timeline-playhead" id="timeline-playhead">
+                <div class="playhead-cap"></div>
+              </div>
+
+              <!-- Track: Video -->
+              <div class="timeline-track" id="track-video">
+                <div class="track-label">V1 VIDEO</div>
+                <div class="track-clips">
+                  <button class="timeline-clip active" style="flex:1;" data-video-index="0" data-project="video1.mp4" data-tools="Ganchos de Retención" data-retention="CapCut / Figma / Canva" data-color="95" data-fx="90" data-sfx="85" data-title="PROYECTO_1.mp4">
+                    <span class="clip-title">01</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="1" data-project="video2.mp4" data-tools="Edición UGC Dinámica" data-retention="CapCut / Figma / Canva" data-color="90" data-fx="95" data-sfx="92" data-title="PROYECTO_2.mp4">
+                    <span class="clip-title">02</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="2" data-project="video3.mp4" data-tools="Motion Graphics VOX" data-retention="CapCut / Figma / Remotion" data-color="96" data-fx="88" data-sfx="90" data-title="PROYECTO_3.mp4">
+                    <span class="clip-title">03</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="3" data-project="videeo4.mp4" data-tools="B-roll & Sound FX" data-retention="CapCut / AI Enhancers" data-color="92" data-fx="92" data-sfx="98" data-title="PROYECTO_4.mp4">
+                    <span class="clip-title">04</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="4" data-project="Video5.mp4" data-tools="Branding Visual" data-retention="Figma / Canva / IA" data-color="88" data-fx="94" data-sfx="87" data-title="PROYECTO_5.mp4">
+                    <span class="clip-title">05</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="5" data-project="video6.mp4" data-tools="Formato Vertical" data-retention="CapCut / Canva" data-color="94" data-fx="91" data-sfx="89" data-title="PROYECTO_6.mp4">
+                    <span class="clip-title">06</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="6" data-project="video7.mp4" data-tools="Edición Long Format" data-retention="CapCut / Remotion" data-color="97" data-fx="93" data-sfx="95" data-title="PROYECTO_7.mp4">
+                    <span class="clip-title">07</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="7" data-project="video8.mp4" data-tools="Contenido Viral TikTok" data-retention="CapCut / IA" data-color="91" data-fx="96" data-sfx="93" data-title="PROYECTO_8.mp4">
+                    <span class="clip-title">08</span>
+                  </button>
+                  <button class="timeline-clip" style="flex:1;" data-video-index="8" data-project="video9.mp4" data-tools="Motion Graphics" data-retention="Figma / Remotion" data-color="93" data-fx="89" data-sfx="96" data-title="PROYECTO_9.mp4">
+                    <span class="clip-title">09</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Track: Text -->
+              <div class="timeline-track">
+                <div class="track-label">T TEXTO</div>
+                <div class="track-clips">
+                  <div class="timeline-clip-static" style="width:15%; margin-left:2%;">[ SUBTITULOS_A ]</div>
+                  <div class="timeline-clip-static" style="width:25%; margin-left:10%;">[ EMOTICONS_POP ]</div>
+                  <div class="timeline-clip-static" style="width:30%; margin-left:5%;">[ TITULOS_VOX_STYLE ]</div>
+                </div>
+              </div>
+
+              <!-- Track: Audio -->
+              <div class="timeline-track">
+                <div class="track-label">A1 SFX</div>
+                <div class="track-clips">
+                  <div class="audio-waveform">
+                    <span class="wave-bar" style="height:12px"></span><span class="wave-bar" style="height:20px"></span><span class="wave-bar" style="height:8px"></span><span class="wave-bar" style="height:25px"></span><span class="wave-bar" style="height:18px"></span><span class="wave-bar" style="height:12px"></span><span class="wave-bar" style="height:28px"></span><span class="wave-bar" style="height:15px"></span><span class="wave-bar" style="height:8px"></span><span class="wave-bar" style="height:22px"></span><span class="wave-bar" style="height:32px"></span><span class="wave-bar" style="height:12px"></span><span class="wave-bar" style="height:18px"></span><span class="wave-bar" style="height:5px"></span><span class="wave-bar" style="height:25px"></span><span class="wave-bar" style="height:14px"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════ SERVICES SECTION ═══════════ -->
+    <section id="servicios" class="servicios-section">
+      <div class="container">
+        
+        <div class="section-header-text">
+          <span class="section-tag">[ CAPACIDADES AUDIOVISUALES ]</span>
+          <h2 class="section-title">EL <em class="serif"><span class="highlight-red">ARSENAL</span></em> DE CONTENIDO</h2>
+          <p class="section-desc">
+            No inventamos nada. Hacemos edición de video sólida e integral junto con un manejo táctico de tus redes sociales para optimizar la retención.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="card-num">[ 01 ]</span>
+            <h3 class="card-title">Reels & TikToks</h3>
+            <p class="card-desc">Ganchos visuales sólidos en los primeros 3 segundos, cortes precisos de retención y subtítulos animados. El material completo listo para subir.</p>
+            <div class="card-footer">Retención Optimizada</div>
+          </div>
+
+          <div class="service-card">
+            <span class="card-num">[ 02 ]</span>
+            <h3 class="card-title">UGC & B-Rolls</h3>
+            <p class="card-desc">Contenido orgánico creado para marcas (User Generated Content) y filmación de B-Rolls estéticos que brindan dinamismo visual al contar historias.</p>
+            <div class="card-footer">Contenido Cercano</div>
+          </div>
+
+          <div class="service-card">
+            <span class="card-num">[ 03 ]</span>
+            <h3 class="card-title">Motion Graphics</h3>
+            <p class="card-desc">Estilo explicativo Vox. Animación de mapas, recortes visuales analógicos y trazos para desglosar conceptos y retener la atención en videos más extensos.</p>
+            <div class="card-footer">Figma & Remotion</div>
+          </div>
+
+          <div class="service-card">
+            <span class="card-num">[ 04 ]</span>
+            <h3 class="card-title">Diseño Integral</h3>
+            <p class="card-desc">Efectos de sonido (SFX) inmersivos, voz en off y asistencia con IA (Gemini Pro/GPT Pro) para afilar el copy de tus publicaciones.</p>
+            <div class="card-footer">Completo & Listo</div>
+          </div>
+        </div>
+
+        <!-- Pricing Callout -->
+        <div class="pricing-panel">
+          <div class="pricing-content">
+            <div>
+              <h3 class="pricing-title">Presupuestos adaptables según tus necesidades</h3>
+              <p class="pricing-desc">Ajustamos las cotizaciones de forma flexible basándonos en el volumen mensual de videos o la complejidad del proyecto. Hablemos para coordinar.</p>
+            </div>
+            <a href="#contacto" class="btn btn-outline magnetic">Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT SECTION ═══════════ -->
+    <section id="contacto" class="contacto-section">
+      <div class="container">
+        <div class="contact-inner">
+          <span class="section-tag">[ CORTE FINAL ]</span>
+          <h2 class="section-title">HAGAMOS EL <em class="serif"><span class="highlight-yellow">CORTE</span></em> JUNTOS</h2>
+          
+          <p class="contact-desc">
+            Contáctanos de forma directa. Respondemos tus consultas de inmediato para coordinar la edición y el manejo orgánico de tus canales.
+          </p>
+
+          <div class="contact-buttons">
+            <a href="mailto:frannare17@gmail.com,alejocabana29@gmail.com?subject=Edición%20de%20Video" class="btn btn-white magnetic">Enviar Correo</a>
+            <a href="https://www.instagram.com/alejo.caba/" target="_blank" rel="noopener" class="btn btn-outline-white magnetic">IG Alejo</a>
+            <a href="https://www.instagram.com/frann_are/" target="_blank" rel="noopener" class="btn btn-outline-white magnetic">IG Francisco</a>
+          </div>
+
+          <div class="contact-emails">
+            <span>alejocabana29@gmail.com</span>
+            <span class="email-divider"></span>
+            <span>frannare17@gmail.com</span>
+          </div>
+          
+          <div class="contact-footer">
+            CABAÑA & ARELLANO © 2026 — HECHO EN SANTA FE, ARGENTINA
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS Entrypoint -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
