@@ -877,6 +877,16 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   overflow: hidden;
   border-radius: 12px;
 }
+
+.mobile-scrubber {
+  display: none;
+  width: min(360px, 75%);
+  margin: 0.85rem auto 0;
+}
+.mobile-scrubber input[type="range"] {
+  width: 100%;
+  accent-color: var(--white);
+}
 .video-viewport-container video {
   width: 100%;
   height: 100%;
@@ -1403,6 +1413,10 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   }
 
   .video-viewport-container {
+    width: min(280px, 100%);
+  }
+  .mobile-scrubber {
+    display: block;
     width: min(280px, 100%);
   }
 

@@ -20,6 +20,7 @@ export function initVideoTimeline() {
   const pauseIcon = playBtn?.querySelector('.overlay-pause-icon');
   const viewportContainer = document.querySelector('.video-viewport-container');
   const soundOverlay = document.getElementById('sound-indicator');
+  const scrubber = document.getElementById('editor-scrubber');
   
   const clips = document.querySelectorAll('.timeline-clip');
   const playhead = document.getElementById('timeline-playhead');
@@ -157,7 +158,24 @@ export function initVideoTimeline() {
       const xPos = offset + (scrollableWidth * ratio);
       playhead.style.left = `${xPos}px`;
     }
+
+    if (scrubber && !scrubber.matches(':active')) {
+      scrubber.value = video.duration ? video.currentTime : 0;
+    }
   });
+
+  if (scrubber) {
+    scrubber.addEventListener('input', () => {
+      if (video.duration) {
+        video.currentTime = Number(scrubber.value);
+      }
+    });
+
+    video.addEventListener('loadedmetadata', () => {
+      scrubber.max = video.duration ? String(video.duration) : '100';
+      scrubber.value = '0';
+    });
+  }
 
   // Timeline scrubbing
   const scrub = (e) => {
