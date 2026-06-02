@@ -20,11 +20,12 @@ export function initVideoTimeline() {
   const pauseIcon = playBtn?.querySelector('.overlay-pause-icon');
   const viewportContainer = document.querySelector('.video-viewport-container');
   const soundOverlay = document.getElementById('sound-indicator');
-  const scrubber = document.getElementById('editor-scrubber');
   
   const clips = document.querySelectorAll('.timeline-clip');
   const playhead = document.getElementById('timeline-playhead');
   const tracksWrapper = document.querySelector('.timeline-tracks-wrapper');
+  const prevClipBtn = document.getElementById('clip-prev');
+  const nextClipBtn = document.getElementById('clip-next');
   
   const inspectProj = document.getElementById('inspect-project');
   const inspectTools = document.getElementById('inspect-tools');
@@ -96,46 +97,61 @@ export function initVideoTimeline() {
     }
   });
 
+  const activateClip = (clip) => {
+    clips.forEach(c => c.classList.remove('active'));
+    clip.classList.add('active');
+
+    const index = parseInt(clip.getAttribute('data-video-index'));
+    const proj = clip.getAttribute('data-project');
+    const tools = clip.getAttribute('data-tools');
+    const retention = clip.getAttribute('data-retention');
+    const title = clip.getAttribute('data-title');
+    
+    const valColorNum = clip.getAttribute('data-color');
+    const valFxNum = clip.getAttribute('data-fx');
+    const valSfxNum = clip.getAttribute('data-sfx');
+
+    activeVideoIndex = index;
+    video.src = LOCAL_SOURCES[activeVideoIndex];
+    video.load();
+    video.play().then(() => {
+      viewportContainer?.classList.remove('is-paused');
+      playIcon?.classList.add('hidden');
+      pauseIcon?.classList.remove('hidden');
+    }).catch(err => console.log(err));
+
+    if (inspectProj) inspectProj.textContent = proj;
+    if (inspectTools) inspectTools.textContent = tools;
+    if (inspectRetention) inspectRetention.textContent = retention;
+    if (activeTrackTitle) activeTrackTitle.textContent = title;
+
+    gsap.to(fillColor, { width: `${valColorNum}%`, duration: 0.6, ease: "power2.out" });
+    gsap.to(fillFx, { width: `${valFxNum}%`, duration: 0.6, ease: "power2.out" });
+    gsap.to(fillSfx, { width: `${valSfxNum}%`, duration: 0.6, ease: "power2.out" });
+
+    if (valColor) valColor.textContent = `${valColorNum}%`;
+    if (valFx) valFx.textContent = `${valFxNum}%`;
+    if (valSfx) valSfx.textContent = `${valSfxNum}%`;
+  };
+
   // Switch Clips
   clips.forEach(clip => {
     clip.addEventListener('click', (e) => {
       e.stopPropagation();
-      
-      clips.forEach(c => c.classList.remove('active'));
-      clip.classList.add('active');
-
-      const index = parseInt(clip.getAttribute('data-video-index'));
-      const proj = clip.getAttribute('data-project');
-      const tools = clip.getAttribute('data-tools');
-      const retention = clip.getAttribute('data-retention');
-      const title = clip.getAttribute('data-title');
-      
-      const valColorNum = clip.getAttribute('data-color');
-      const valFxNum = clip.getAttribute('data-fx');
-      const valSfxNum = clip.getAttribute('data-sfx');
-
-      activeVideoIndex = index;
-      video.src = LOCAL_SOURCES[activeVideoIndex];
-      video.load();
-      video.play().then(() => {
-        viewportContainer?.classList.remove('is-paused');
-        playIcon?.classList.add('hidden');
-        pauseIcon?.classList.remove('hidden');
-      }).catch(err => console.log(err));
-
-      if (inspectProj) inspectProj.textContent = proj;
-      if (inspectTools) inspectTools.textContent = tools;
-      if (inspectRetention) inspectRetention.textContent = retention;
-      if (activeTrackTitle) activeTrackTitle.textContent = title;
-
-      gsap.to(fillColor, { width: `${valColorNum}%`, duration: 0.6, ease: "power2.out" });
-      gsap.to(fillFx, { width: `${valFxNum}%`, duration: 0.6, ease: "power2.out" });
-      gsap.to(fillSfx, { width: `${valSfxNum}%`, duration: 0.6, ease: "power2.out" });
-
-      if (valColor) valColor.textContent = `${valColorNum}%`;
-      if (valFx) valFx.textContent = `${valFxNum}%`;
-      if (valSfx) valSfx.textContent = `${valSfxNum}%`;
+      activateClip(clip);
     });
+  });
+
+  prevClipBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const nextIndex = (activeVideoIndex - 1 + clips.length) % clips.length;
+    activateClip(clips[nextIndex]);
+  });
+
+  nextClipBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const nextIndex = (activeVideoIndex + 1) % clips.length;
+    activateClip(clips[nextIndex]);
   });
 
   // Playhead movement
@@ -159,23 +175,7 @@ export function initVideoTimeline() {
       playhead.style.left = `${xPos}px`;
     }
 
-    if (scrubber && !scrubber.matches(':active')) {
-      scrubber.value = video.duration ? video.currentTime : 0;
-    }
   });
-
-  if (scrubber) {
-    scrubber.addEventListener('input', () => {
-      if (video.duration) {
-        video.currentTime = Number(scrubber.value);
-      }
-    });
-
-    video.addEventListener('loadedmetadata', () => {
-      scrubber.max = video.duration ? String(video.duration) : '100';
-      scrubber.value = '0';
-    });
-  }
 
   // Timeline scrubbing
   const scrub = (e) => {
