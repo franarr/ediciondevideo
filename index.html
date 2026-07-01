@@ -77,12 +77,26 @@
             </div>
           </div>
           
-          <!-- Right: Video Carousel -->
-          <div class="hero-video">
-            <div class="hero-reel-single">
+          <!-- Right: 3 Videos Side by Side -->
+          <div class="hero-videos-container">
+            <div class="hero-video-item">
               <div class="film-card">
                 <div class="film-card-video">
-                  <video class="hero-reel-player" playsinline muted autoplay preload="metadata"></video>
+                  <video src="./Videos/TERMINADO.mp4" playsinline muted autoplay loop></video>
+                </div>
+              </div>
+            </div>
+            <div class="hero-video-item">
+              <div class="film-card">
+                <div class="film-card-video">
+                  <video src="./Videos/voltra.mp4" playsinline muted autoplay loop></video>
+                </div>
+              </div>
+            </div>
+            <div class="hero-video-item">
+              <div class="film-card">
+                <div class="film-card-video">
+                  <video src="./Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4" playsinline muted autoplay loop></video>
                 </div>
               </div>
             </div>
@@ -124,20 +138,25 @@
 
         <div class="nosotros-stage">
           <!-- Scattered text labels (positioned around the photo) -->
-          <div class="floating-label fl-1">CAPCUT</div>
-          <div class="floating-label fl-2">FIGMA</div>
-          <div class="floating-label fl-3">CANVA</div>
-          <div class="floating-label fl-4 serif-label">edición de video</div>
-          <div class="floating-label fl-5">REELS</div>
-          <div class="floating-label fl-6">TIKTOKS</div>
-          <div class="floating-label fl-7 serif-label">motion graphics</div>
-          <div class="floating-label fl-8">UGC</div>
-          <div class="floating-label fl-9">SUBTITULOS<br>DINÁMICOS</div>
-          <div class="floating-label fl-10">SFX &<br>VOZ EN OFF</div>
-          <div class="floating-label fl-11 serif-label">manejo de redes</div>
-          <div class="floating-label fl-12">B-ROLLS</div>
-          <div class="floating-label fl-13">GEMINI PRO<br>GPT PRO</div>
-          <div class="floating-label fl-14">REMOTION</div>
+          <div class="labels-group active" id="labels-alejo">
+            <div class="floating-label fl-1">comunicador</div>
+            <div class="floating-label fl-2">ugc</div>
+            <div class="floating-label fl-3">diseñador</div>
+            <div class="floating-label fl-4 serif-label">editor</div>
+            <div class="floating-label fl-5">motion graphic</div>
+            <div class="floating-label fl-6">CAPCUT</div>
+            <div class="floating-label fl-7">REELS</div>
+          </div>
+
+          <div class="labels-group" id="labels-francisco">
+            <div class="floating-label fl-1">profesor</div>
+            <div class="floating-label fl-2">cartógrafo</div>
+            <div class="floating-label fl-3">diseñador</div>
+            <div class="floating-label fl-4 serif-label">editor</div>
+            <div class="floating-label fl-5">comunicador</div>
+            <div class="floating-label fl-6">investigador</div>
+            <div class="floating-label fl-7">datos</div>
+          </div>
 
           <!-- Photo container -->
           <div class="nosotros-photo-wrapper">
@@ -168,7 +187,7 @@
           </div>
 
 
-          <!-- Navigation arrows -->
+          <!-- Navigation arrows (moved outside the photo to prevent overlapping) -->
           <div class="nosotros-nav">
             <button class="nosotros-arrow nosotros-prev magnetic" aria-label="Anterior">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
@@ -221,13 +240,18 @@
                 </video>
                 
                 <div class="viewport-overlay">
-                  <button class="viewport-play-btn" id="video-play-btn">
+                  <button class="viewport-play-btn" id="video-play-btn" title="Reproducir/Pausar">
                     <svg class="overlay-play-icon" viewBox="0 0 24 24" fill="currentColor">
                       <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
                     <svg class="overlay-pause-icon hidden" viewBox="0 0 24 24" fill="currentColor">
                       <rect x="6" y="4" width="4" height="16"></rect>
                       <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                  </button>
+                  <button class="viewport-fullscreen-btn" id="video-fullscreen-btn" title="Pantalla Completa">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
                     </svg>
                   </button>
                 </div>

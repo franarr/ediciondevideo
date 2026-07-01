@@ -4,9 +4,9 @@ export function initNosotrosSlider() {
   const photos = document.querySelectorAll('.nosotros-photo');
   const prevBtn = document.querySelector('.nosotros-prev');
   const nextBtn = document.querySelector('.nosotros-next');
-  const labels = document.querySelectorAll('.floating-label');
+  const labelGroups = document.querySelectorAll('.labels-group');
 
-  if (!photos.length) return;
+  if (!photos.length || !labelGroups.length) return;
 
   let current = 0;
   const total = photos.length;
@@ -16,17 +16,23 @@ export function initNosotrosSlider() {
 
     const currentPhoto = photos[current];
     const newPhoto = photos[index];
+    const currentGroup = labelGroups[current];
+    const newGroup = labelGroups[index];
 
     gsap.set(newPhoto, { opacity: 0, scale: 1, zIndex: 2 });
     gsap.set(currentPhoto, { zIndex: 1 });
 
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-    tl.to(labels, {
-      opacity: 0,
-      duration: 0.2,
-      stagger: 0.02
-    }, 0);
+    // Fade out old labels
+    if (currentGroup) {
+      const oldLabels = currentGroup.querySelectorAll('.floating-label');
+      tl.to(oldLabels, {
+        opacity: 0,
+        duration: 0.2,
+        stagger: 0.02
+      }, 0);
+    }
 
     tl.to(currentPhoto, {
       opacity: 0,
@@ -36,6 +42,10 @@ export function initNosotrosSlider() {
     tl.add(() => {
       currentPhoto.classList.remove('active');
       newPhoto.classList.add('active');
+      
+      if (currentGroup) currentGroup.classList.remove('active');
+      if (newGroup) newGroup.classList.add('active');
+      
       current = index;
     });
 
@@ -44,21 +54,17 @@ export function initNosotrosSlider() {
       duration: 0.4
     }, '>-0.05');
 
-    tl.to(labels, {
-      opacity: 1,
-      duration: 0.4,
-      stagger: { each: 0.04, from: 'random' }
-    }, '>-0.05');
+    // Fade in new labels
+    if (newGroup) {
+      const newLabels = newGroup.querySelectorAll('.floating-label');
+      gsap.set(newLabels, { opacity: 0 }); // ensure they start hidden
+      tl.to(newLabels, {
+        opacity: 1,
+        duration: 0.4,
+        stagger: { each: 0.04, from: 'random' }
+      }, '>-0.05');
+    }
   };
-
-  labels.forEach((label) => {
-    label.addEventListener('mouseenter', () => {
-      gsap.to(label, { scale: 1.08, y: -6, duration: 0.25, ease: 'power2.out' });
-    });
-    label.addEventListener('mouseleave', () => {
-      gsap.to(label, { scale: 1, y: 0, duration: 0.25, ease: 'power2.out' });
-    });
-  });
 
   nextBtn?.addEventListener('click', () => {
     switchTo((current + 1) % total);
@@ -68,8 +74,9 @@ export function initNosotrosSlider() {
     switchTo((current - 1 + total) % total);
   });
 
-  // Initial GSAP animation for labels (staggered appear)
-  gsap.fromTo(labels,
+  // Initial animation
+  const firstLabels = labelGroups[0].querySelectorAll('.floating-label');
+  gsap.fromTo(firstLabels,
     { opacity: 0, y: 10 },
     {
       opacity: 1,
@@ -85,3 +92,19 @@ export function initNosotrosSlider() {
     }
   );
 }
+
+// Fullscreen button logic for the timeline editor video
+document.addEventListener('DOMContentLoaded', () => {
+  const fullscreenBtn = document.getElementById('video-fullscreen-btn');
+  const video = document.getElementById('editor-video');
+
+  fullscreenBtn?.addEventListener('click', () => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { /* Safari */
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { /* IE11 */
+      video.msRequestFullscreen();
+    }
+  });
+});
