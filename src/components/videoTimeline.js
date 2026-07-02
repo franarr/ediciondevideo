@@ -9,7 +9,11 @@ const LOCAL_SOURCES = [
   "./Videos/video6.mp4",
   "./Videos/video7.mp4",
   "./Videos/video8.mp4",
-  "./Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4"
+  "./Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4",
+  "./Videos/antesydespues.mp4",
+  "./Videos/video1.mp4",
+  "./Videos/video2.mp4",
+  "./Videos/video9.mp4"
 ];
 
 export function initVideoTimeline() {
