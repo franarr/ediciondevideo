@@ -82,21 +82,21 @@
             <div class="hero-video-item">
               <div class="film-card">
                 <div class="film-card-video">
-                  <video src="./Videos/TERMINADO.mp4" playsinline muted autoplay loop></video>
+                  <video src="./Videos/video3.mp4" playsinline muted autoplay loop preload="auto"></video>
                 </div>
               </div>
             </div>
             <div class="hero-video-item">
               <div class="film-card">
                 <div class="film-card-video">
-                  <video src="./Videos/voltra.mp4" playsinline muted autoplay loop></video>
+                  <video src="./Videos/video6.mp4" playsinline muted autoplay loop preload="auto"></video>
                 </div>
               </div>
             </div>
             <div class="hero-video-item">
               <div class="film-card">
                 <div class="film-card-video">
-                  <video src="./Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4" playsinline muted autoplay loop></video>
+                  <video src="./Videos/video8.mp4" playsinline muted autoplay loop preload="auto"></video>
                 </div>
               </div>
             </div>
@@ -163,26 +163,24 @@
             <div class="nosotros-photo active" id="photo-alejo">
               <img src="./images/alejosinfondo.png" alt="Alejo Cabaña">
               <div class="photo-name">Alejo Cabaña</div>
-              <div class="role-tags" aria-label="Roles de Alejo">
-                <span class="role-tag">Comunicador</span>
-                <span class="role-tag">UGC</span>
-                <span class="role-tag">Diseñador</span>
-                <span class="role-tag">Editor</span>
-                <span class="role-tag">Motion Graphic</span>
-              </div>
             </div>
             <div class="nosotros-photo" id="photo-francisco">
               <img src="./images/fransinfondo.png" alt="Francisco Arellano">
               <div class="photo-name">Francisco Arellano</div>
-              <div class="role-tags" aria-label="Roles de Francisco">
-                <span class="role-tag">Profesor</span>
-                <span class="role-tag">Cartografo</span>
-                <span class="role-tag">Diseñador</span>
-                <span class="role-tag">Editor</span>
-                <span class="role-tag">Comunicador</span>
-                <span class="role-tag">Investigador</span>
-                <span class="role-tag">Datos</span>
-              </div>
+            </div>
+          </div>
+
+          <!-- Side directional lines pointing towards center -->
+          <div class="nosotros-side-arrows" aria-hidden="true">
+            <div class="side-arrow side-left">
+              <span class="side-arrow-tip"></span>
+              <span class="side-arrow-line"></span>
+              <span>Santa Fe</span>
+            </div>
+            <div class="side-arrow side-right">
+              <span class="side-arrow-tip"></span>
+              <span class="side-arrow-line"></span>
+              <span>Argentina</span>
             </div>
           </div>
 
@@ -216,7 +214,7 @@
           <div class="section-header-badge">
             <div class="editor-status-badge">
               <span class="status-pulse"></span>
-              <span class="status-text" id="active-track-name">PROYECTO_1.mp4</span>
+              <span class="status-text" id="active-track-name">TERMINADO.mp4</span>
             </div>
           </div>
         </div>
@@ -235,9 +233,14 @@
             <!-- Video Viewport -->
             <div class="editor-viewport">
               <div class="video-viewport-container">
-                <video id="editor-video" playsinline muted loop src="">
+                <video id="editor-video" playsinline muted loop preload="auto" src="">
                   Tu navegador no soporta video.
                 </video>
+                
+                <div class="video-loading-overlay hidden" id="video-loading">
+                  <div class="spinner-ring"></div>
+                  <span>CARGANDO...</span>
+                </div>
                 
                 <div class="viewport-overlay">
                   <button class="viewport-play-btn" id="video-play-btn" title="Reproducir/Pausar">

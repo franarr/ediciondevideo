@@ -520,14 +520,14 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   color: var(--black);
 }
 
-/* Position each label around the photo */
-.fl-1  { top: 15%;  left: 10%; }
-.fl-2  { top: 25%;  right: 15%; }
-.fl-3  { top: 40%;  left: 5%; }
-.fl-4  { top: 50%;  right: 5%; }
-.fl-5  { top: 65%;  left: 8%; }
-.fl-6  { top: 75%;  right: 12%; }
-.fl-7  { top: 85%;  left: 15%; }
+/* Position each label around the photo (middle 32%-64% zone left free for arrows) */
+.fl-1  { top: 8%;   left: 10%; }
+.fl-2  { top: 10%;  right: 12%; }
+.fl-3  { top: 22%;  left: 12%; }
+.fl-4  { top: 22%;  right: 12%; }
+.fl-5  { top: 68%;  left: 10%; }
+.fl-6  { top: 72%;  right: 12%; }
+.fl-7  { top: 86%;  left: 15%; }
 
 /* Photo wrapper */
 .nosotros-photo-wrapper {
@@ -912,6 +912,43 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   width: 16px;
   height: 16px;
   color: var(--deep-black);
+}
+
+/* Video loading spinner overlay */
+.video-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  z-index: 15;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.video-loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.spinner-ring {
+  width: 26px;
+  height: 26px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin-ring 0.8s linear infinite;
+}
+@keyframes spin-ring {
+  to { transform: rotate(360deg); }
+}
+.video-loading-overlay span {
+  font-family: monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--gray-300);
 }
 
 .sound-toggle {

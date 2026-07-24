@@ -45,20 +45,50 @@ export function initVideoTimeline() {
 
   if (!video) return;
 
+  const loadingOverlay = document.getElementById('video-loading');
   let activeVideoIndex = 0;
 
-  // Set initial video source
+  // Video buffering event listeners to show/hide loader
+  video.addEventListener('waiting', () => {
+    loadingOverlay?.classList.remove('hidden');
+  });
+  video.addEventListener('playing', () => {
+    loadingOverlay?.classList.add('hidden');
+    viewportContainer?.classList.remove('is-paused');
+    playIcon?.classList.add('hidden');
+    pauseIcon?.classList.remove('hidden');
+  });
+  video.addEventListener('canplay', () => {
+    loadingOverlay?.classList.add('hidden');
+  });
+
+  // Set initial video source and play muted
   video.src = LOCAL_SOURCES[activeVideoIndex];
   video.load();
+  video.play().then(() => {
+    viewportContainer?.classList.remove('is-paused');
+    playIcon?.classList.add('hidden');
+    pauseIcon?.classList.remove('hidden');
+  }).catch(() => {
+    // Autoplay blocked by browser policy, keep paused UI
+    viewportContainer?.classList.add('is-paused');
+    playIcon?.classList.remove('hidden');
+    pauseIcon?.classList.add('hidden');
+  });
 
   // Play/Pause
   const togglePlay = () => {
     if (video.paused) {
+      loadingOverlay?.classList.remove('hidden');
       video.play().then(() => {
         viewportContainer?.classList.remove('is-paused');
         playIcon?.classList.add('hidden');
         pauseIcon?.classList.remove('hidden');
-      }).catch(err => console.log("Playback interrupted: ", err));
+        loadingOverlay?.classList.add('hidden');
+      }).catch(err => {
+        console.log("Playback interrupted: ", err);
+        loadingOverlay?.classList.add('hidden');
+      });
     } else {
       video.pause();
       viewportContainer?.classList.add('is-paused');
@@ -115,13 +145,18 @@ export function initVideoTimeline() {
     const valSfxNum = clip.getAttribute('data-sfx');
 
     activeVideoIndex = index;
+    loadingOverlay?.classList.remove('hidden');
     video.src = LOCAL_SOURCES[activeVideoIndex];
     video.load();
     video.play().then(() => {
       viewportContainer?.classList.remove('is-paused');
       playIcon?.classList.add('hidden');
       pauseIcon?.classList.remove('hidden');
-    }).catch(err => console.log(err));
+      loadingOverlay?.classList.add('hidden');
+    }).catch(err => {
+      console.log(err);
+      loadingOverlay?.classList.add('hidden');
+    });
 
     if (inspectProj) inspectProj.textContent = proj;
     if (inspectTools) inspectTools.textContent = tools;
