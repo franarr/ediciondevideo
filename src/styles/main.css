@@ -836,6 +836,12 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   background: var(--deep-black);
   overflow: hidden;
   border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.video-viewport-container.is-horizontal {
+  aspect-ratio: 16 / 9;
+  width: min(700px, 100%);
 }
 .mobile-clip-nav {
   display: none;

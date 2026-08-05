@@ -65,6 +65,15 @@ export function initVideoTimeline() {
     loadingOverlay?.classList.add('hidden');
   });
 
+  // Dynamically adjust for horizontal vs vertical videos
+  video.addEventListener('loadedmetadata', () => {
+    if (video.videoWidth > video.videoHeight) {
+      viewportContainer?.classList.add('is-horizontal');
+    } else {
+      viewportContainer?.classList.remove('is-horizontal');
+    }
+  });
+
   // Set initial video source and play muted (lazy: only load metadata first)
   video.preload = 'metadata';
   video.src = LOCAL_SOURCES[activeVideoIndex];
