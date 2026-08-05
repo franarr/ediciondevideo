@@ -1415,14 +1415,17 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
     font-size: 0.6rem;
     max-width: 100px;
   }
+  .nosotros-side-arrows {
+    display: none;
+  }
   .fl-1  { top: 2%;  left: 5%; }
   .fl-2  { top: 8%;  right: 5%; }
   .fl-3  { top: 16%; left: 5%; }
   .fl-4  { top: 22%; right: 5%; }
-  .fl-5  { top: 78%; left: 5%; }
-  .fl-6  { top: 82%; right: 5%; }
-  .fl-7  { top: 92%; left: 10%; }
-  .fl-8  { top: 88%; right: 10%; }
+  .fl-5  { top: 82%; left: 5%; }
+  .fl-6  { top: 86%; right: 5%; }
+  .fl-7  { top: 96%; left: 10%; }
+  .fl-8  { top: 92%; right: 10%; }
   .fl-13, .fl-14, .fl-15 { display: none; }
 }
 
