@@ -1074,7 +1074,7 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
 }
 .timeline-tracks-wrapper {
   position: relative;
-  min-width: 850px;
+  min-width: 1000px;
 }
 .timeline-track {
   display: flex;

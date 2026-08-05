@@ -13,7 +13,10 @@ const LOCAL_SOURCES = [
   "./Videos/antesydespues.mp4",
   "./Videos/video1.mp4",
   "./Videos/video2.mp4",
-  "./Videos/video9.mp4"
+  "./Videos/video9.mp4",
+  "./Videos/real_state1.mp4",
+  "./Videos/real_state2.mp4",
+  "./Videos/educativo.mp4"
 ];
 
 export function initVideoTimeline() {
@@ -62,7 +65,8 @@ export function initVideoTimeline() {
     loadingOverlay?.classList.add('hidden');
   });
 
-  // Set initial video source and play muted
+  // Set initial video source and play muted (lazy: only load metadata first)
+  video.preload = 'metadata';
   video.src = LOCAL_SOURCES[activeVideoIndex];
   video.load();
   video.play().then(() => {
@@ -146,6 +150,11 @@ export function initVideoTimeline() {
 
     activeVideoIndex = index;
     loadingOverlay?.classList.remove('hidden');
+    // Abort any pending download before switching
+    video.pause();
+    video.removeAttribute('src');
+    video.load(); // abort previous
+    video.preload = 'auto';
     video.src = LOCAL_SOURCES[activeVideoIndex];
     video.load();
     video.play().then(() => {
