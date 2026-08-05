@@ -1386,14 +1386,19 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   }
 
   .editor-body {
-    grid-template-columns: 1fr;
+    display: block; /* Ignore grid on mobile to let viewport take full space */
+  }
+  .editor-sidebar {
+    display: none; /* Hide sidebar completely to make video full width and clean */
   }
   .editor-viewport {
     border-right: none;
-    border-bottom: 1px solid var(--gray-700);
+    padding: 1rem 0;
   }
   .video-viewport-container {
-    width: min(320px, 80%);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
   }
 
   .services-grid {
@@ -1425,10 +1430,21 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
     max-width: 80%;
   }
   .floating-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.07em;
-    max-width: 110px;
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+    max-width: 100px;
   }
+  /* Reposition labels for mobile to avoid arrows and center image */
+  .fl-1  { top: 2%;  left: 5%; }
+  .fl-2  { top: 8%;  right: 5%; }
+  .fl-3  { top: 16%; left: 5%; }
+  .fl-4  { top: 22%; right: 5%; }
+  
+  .fl-5  { top: 78%; left: 5%; }
+  .fl-6  { top: 82%; right: 5%; }
+  .fl-7  { top: 92%; left: 10%; }
+  .fl-8  { top: 88%; right: 10%; }
+
   .fl-13,
   .fl-14,
   .fl-15 {
