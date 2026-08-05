@@ -1388,8 +1388,8 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   .editor-body {
     display: block; /* Ignore grid on mobile to let viewport take full space */
   }
-  .editor-sidebar {
-    display: none; /* Hide sidebar completely to make video full width and clean */
+  .editor-inspector {
+    display: none; /* Hide inspector completely to make video full width and clean */
   }
   .editor-viewport {
     border-right: none;
@@ -1409,6 +1409,21 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
     flex-direction: column;
     align-items: flex-start;
   }
+
+  /* Reposition labels for mobile/tablet to avoid arrows and center image */
+  .floating-label {
+    font-size: 0.6rem;
+    max-width: 100px;
+  }
+  .fl-1  { top: 2%;  left: 5%; }
+  .fl-2  { top: 8%;  right: 5%; }
+  .fl-3  { top: 16%; left: 5%; }
+  .fl-4  { top: 22%; right: 5%; }
+  .fl-5  { top: 78%; left: 5%; }
+  .fl-6  { top: 82%; right: 5%; }
+  .fl-7  { top: 92%; left: 10%; }
+  .fl-8  { top: 88%; right: 10%; }
+  .fl-13, .fl-14, .fl-15 { display: none; }
 }
 
 /* Mobile */
@@ -1428,27 +1443,6 @@ body::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
   }
   .nosotros-photo-wrapper {
     max-width: 80%;
-  }
-  .floating-label {
-    font-size: 0.55rem;
-    letter-spacing: 0.05em;
-    max-width: 100px;
-  }
-  /* Reposition labels for mobile to avoid arrows and center image */
-  .fl-1  { top: 2%;  left: 5%; }
-  .fl-2  { top: 8%;  right: 5%; }
-  .fl-3  { top: 16%; left: 5%; }
-  .fl-4  { top: 22%; right: 5%; }
-  
-  .fl-5  { top: 78%; left: 5%; }
-  .fl-6  { top: 82%; right: 5%; }
-  .fl-7  { top: 92%; left: 10%; }
-  .fl-8  { top: 88%; right: 10%; }
-
-  .fl-13,
-  .fl-14,
-  .fl-15 {
-    display: none;
   }
 
   .video-viewport-container {
