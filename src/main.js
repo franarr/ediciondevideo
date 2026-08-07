@@ -6,6 +6,7 @@ import { initVideoTimeline } from './components/videoTimeline';
 import { initScrollAnimations } from './animations/timeline';
 import { initHeroSlider } from './components/heroSlider';
 import { initNosotrosSlider } from './components/nosotrosSlider';
+import { initI18n } from './i18n/i18n';
 
 // Register ScrollTrigger to sync with Lenis
 gsap.registerPlugin(ScrollTrigger);
@@ -78,4 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 7. Initialize i18n language switcher
+  initI18n();
 });

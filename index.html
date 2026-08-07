@@ -34,13 +34,18 @@
         CABAÑA <span class="amp">&</span> ARELLANO
       </a>
       <ul class="nav-links">
-        <li><a href="#hero" class="nav-link-item magnetic">Inicio</a></li>
-        <li><a href="#nosotros" class="nav-link-item magnetic">Nosotros</a></li>
-        <li><a href="#estudio" class="nav-link-item magnetic">Estudio</a></li>
-        <li><a href="#servicios" class="nav-link-item magnetic">Servicios</a></li>
-        <li><a href="#contacto" class="nav-link-item magnetic">Contacto</a></li>
+        <li><a href="#hero" class="nav-link-item magnetic" data-i18n="nav.inicio">Inicio</a></li>
+        <li><a href="#nosotros" class="nav-link-item magnetic" data-i18n="nav.nosotros">Nosotros</a></li>
+        <li><a href="#estudio" class="nav-link-item magnetic" data-i18n="nav.estudio">Estudio</a></li>
+        <li><a href="#servicios" class="nav-link-item magnetic" data-i18n="nav.servicios">Servicios</a></li>
+        <li><a href="#contacto" class="nav-link-item magnetic" data-i18n="nav.contacto">Contacto</a></li>
       </ul>
-      <a href="#contacto" class="btn btn-cta magnetic" id="nav-cta-btn">Hablemos</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pt">PT</button>
+      </div>
+      <a href="#contacto" class="btn btn-cta magnetic" id="nav-cta-btn" data-i18n="nav.cta">Hablemos</a>
     </nav>
   </header>
 
@@ -54,26 +59,26 @@
           
           <!-- Left: Text -->
           <div class="hero-text">
-            <div class="location-tag">[ SANTA FE, ARGENTINA ]</div>
+            <div class="location-tag" data-i18n="hero.location">[ SANTA FE, ARGENTINA ]</div>
             
             <h1 class="hero-title">
-              <span class="title-line"><span class="title-word">EDITORES</span></span>
-              <span class="title-line"><span class="title-word"><span class="highlight-yellow">DE VIDEO</span></span></span>
+              <span class="title-line"><span class="title-word" data-i18n="hero.title1">EDITORES</span></span>
+              <span class="title-line"><span class="title-word"><span class="highlight-yellow" data-i18n="hero.title2">DE VIDEO</span></span></span>
               <span class="title-line">
-                <span class="title-word amp-word"><span class="amp">y</span></span>
-                <span class="title-word"><span class="highlight-red">REDES</span></span>
+                <span class="title-word amp-word"><span class="amp" data-i18n="hero.title3">y</span></span>
+                <span class="title-word"><span class="highlight-red" data-i18n="hero.title4">REDES</span></span>
               </span>
             </h1>
 
             <h2 class="hero-subtitle">Francisco Arellano & Alejo Cabaña</h2>
             
-            <p class="hero-desc">
+            <p class="hero-desc" data-i18n="hero.desc">
               Somos un equipo complementario de Santa Fe. Ambos manejamos las mismas herramientas y alternamos tareas para estar siempre conectados y respondiendo tus mensajes. Hacemos que tu material destaque con <span class="hl-yellow-text">edición sólida</span>, <span class="hl-red-text">ganchos de retención</span> y estrategia orgánica real.
             </p>
 
             <div class="hero-buttons">
-              <a href="#estudio" class="btn btn-primary magnetic">Ver Línea de Tiempo</a>
-              <a href="#contacto" class="btn btn-outline magnetic">Iniciar Proyecto</a>
+              <a href="#estudio" class="btn btn-primary magnetic" data-i18n="hero.btn1">Ver Línea de Tiempo</a>
+              <a href="#contacto" class="btn btn-outline magnetic" data-i18n="hero.btn2">Iniciar Proyecto</a>
             </div>
           </div>
           
@@ -110,13 +115,13 @@
     <div class="brands-marquee">
       <div class="marquee-track">
         <div class="marquee-content">
-          <span>Tienda de mascotas</span><span class="sep">///</span>
-          <span>Marcas Personales</span><span class="sep">///</span>
-          <span>Financieros</span><span class="sep">///</span>
-          <span>Empresas Tech & Software</span><span class="sep">///</span>
-          <span>Sector Educativo</span><span class="sep">///</span>
-          <span>Área Vehicular</span><span class="sep">///</span>
-          <span>Emprendimientos</span><span class="sep">///</span>
+          <span data-i18n="marquee.1">Tienda de mascotas</span><span class="sep">///</span>
+          <span data-i18n="marquee.2">Marcas Personales</span><span class="sep">///</span>
+          <span data-i18n="marquee.3">Financieros</span><span class="sep">///</span>
+          <span data-i18n="marquee.4">Empresas Tech & Software</span><span class="sep">///</span>
+          <span data-i18n="marquee.5">Sector Educativo</span><span class="sep">///</span>
+          <span data-i18n="marquee.6">Área Vehicular</span><span class="sep">///</span>
+          <span data-i18n="marquee.7">Emprendimientos</span><span class="sep">///</span>
         </div>
         <div class="marquee-content" aria-hidden="true">
           <span>Tienda de mascotas</span><span class="sep">///</span>
@@ -133,8 +138,8 @@
     <!-- ═══════════ NOSOTROS SECTION ═══════════ -->
     <section id="nosotros" class="nosotros-section">
       <div class="container">
-        <span class="section-tag">[ EL EQUIPO ]</span>
-        <h2 class="section-title nosotros-title">UN POCO DE NOSOTROS</h2>
+        <span class="section-tag" data-i18n="nosotros.tag">[ EL EQUIPO ]</span>
+        <h2 class="section-title nosotros-title" data-i18n="nosotros.title">UN POCO DE NOSOTROS</h2>
 
         <div class="nosotros-stage">
           <!-- Scattered text labels (positioned around the photo) -->
@@ -205,9 +210,9 @@
         <!-- Section Header -->
         <div class="section-header-row">
           <div class="section-header-text">
-            <span class="section-tag">[ EL ESTUDIO / INTERACTIVO ]</span>
-            <h2 class="section-title">Mesa de <em class="serif"><span class="highlight-yellow">trabajo</span></em> activa</h2>
-            <p class="section-desc">
+            <span class="section-tag" data-i18n="estudio.tag">[ EL ESTUDIO / INTERACTIVO ]</span>
+            <h2 class="section-title" data-i18n="estudio.title">Mesa de <em class="serif"><span class="highlight-yellow">trabajo</span></em> activa</h2>
+            <p class="section-desc" data-i18n="estudio.desc">
               Usa nuestra línea de tiempo interactiva. Haz clic en las pistas de video para alternar entre los proyectos reales que editamos y observa cómo estructuramos los cortes, efectos y audios.
             </p>
           </div>
@@ -422,9 +427,9 @@
       <div class="container">
         
         <div class="section-header-text">
-          <span class="section-tag">[ CAPACIDADES AUDIOVISUALES ]</span>
-          <h2 class="section-title">EL <em class="serif"><span class="highlight-red">ARSENAL</span></em> DE CONTENIDO</h2>
-          <p class="section-desc">
+          <span class="section-tag" data-i18n="servicios.tag">[ CAPACIDADES AUDIOVISUALES ]</span>
+          <h2 class="section-title" data-i18n="servicios.title">EL <em class="serif"><span class="highlight-red">ARSENAL</span></em> DE CONTENIDO</h2>
+          <p class="section-desc" data-i18n="servicios.desc">
             No inventamos nada. Hacemos edición de video sólida e integral junto con un manejo táctico de tus redes sociales para optimizar la retención.
           </p>
         </div>
@@ -432,30 +437,30 @@
         <div class="services-grid">
           <div class="service-card">
             <span class="card-num">[ 01 ]</span>
-            <h3 class="card-title">Reels & TikToks</h3>
-            <p class="card-desc">Ganchos visuales sólidos en los primeros 3 segundos, cortes precisos de retención y subtítulos animados. El material completo listo para subir.</p>
-            <div class="card-footer">Retención Optimizada</div>
+            <h3 class="card-title" data-i18n="servicios.card1.title">Reels & TikToks</h3>
+            <p class="card-desc" data-i18n="servicios.card1.desc">Ganchos visuales sólidos en los primeros 3 segundos, cortes precisos de retención y subtítulos animados. El material completo listo para subir.</p>
+            <div class="card-footer" data-i18n="servicios.card1.footer">Retención Optimizada</div>
           </div>
 
           <div class="service-card">
             <span class="card-num">[ 02 ]</span>
-            <h3 class="card-title">UGC & B-Rolls</h3>
-            <p class="card-desc">Contenido orgánico creado para marcas (User Generated Content) y filmación de B-Rolls estéticos que brindan dinamismo visual al contar historias.</p>
-            <div class="card-footer">Contenido Cercano</div>
+            <h3 class="card-title" data-i18n="servicios.card2.title">UGC & B-Rolls</h3>
+            <p class="card-desc" data-i18n="servicios.card2.desc">Contenido orgánico creado para marcas (User Generated Content) y filmación de B-Rolls estéticos que brindan dinamismo visual al contar historias.</p>
+            <div class="card-footer" data-i18n="servicios.card2.footer">Contenido Cercano</div>
           </div>
 
           <div class="service-card">
             <span class="card-num">[ 03 ]</span>
-            <h3 class="card-title">Motion Graphics</h3>
-            <p class="card-desc">Estilo explicativo Vox. Animación de mapas, recortes visuales analógicos y trazos para desglosar conceptos y retener la atención en videos más extensos.</p>
-            <div class="card-footer">Figma & Remotion</div>
+            <h3 class="card-title" data-i18n="servicios.card3.title">Motion Graphics</h3>
+            <p class="card-desc" data-i18n="servicios.card3.desc">Estilo explicativo Vox. Animación de mapas, recortes visuales analógicos y trazos para desglosar conceptos y retener la atención en videos más extensos.</p>
+            <div class="card-footer" data-i18n="servicios.card3.footer">Figma & Remotion</div>
           </div>
 
           <div class="service-card">
             <span class="card-num">[ 04 ]</span>
-            <h3 class="card-title">Diseño Integral</h3>
-            <p class="card-desc">Efectos de sonido (SFX) inmersivos, voz en off y asistencia con IA (Gemini Pro/GPT Pro) para afilar el copy de tus publicaciones.</p>
-            <div class="card-footer">Completo & Listo</div>
+            <h3 class="card-title" data-i18n="servicios.card4.title">Diseño Integral</h3>
+            <p class="card-desc" data-i18n="servicios.card4.desc">Efectos de sonido (SFX) inmersivos, voz en off y asistencia con IA (Gemini Pro/GPT Pro) para afilar el copy de tus publicaciones.</p>
+            <div class="card-footer" data-i18n="servicios.card4.footer">Completo & Listo</div>
           </div>
         </div>
 
@@ -463,10 +468,10 @@
         <div class="pricing-panel">
           <div class="pricing-content">
             <div>
-              <h3 class="pricing-title">Presupuestos adaptables según tus necesidades</h3>
-              <p class="pricing-desc">Ajustamos las cotizaciones de forma flexible basándonos en el volumen mensual de videos o la complejidad del proyecto. Hablemos para coordinar.</p>
+              <h3 class="pricing-title" data-i18n="pricing.title">Presupuestos adaptables según tus necesidades</h3>
+              <p class="pricing-desc" data-i18n="pricing.desc">Ajustamos las cotizaciones de forma flexible basándonos en el volumen mensual de videos o la complejidad del proyecto. Hablemos para coordinar.</p>
             </div>
-            <a href="#contacto" class="btn btn-outline magnetic">Cotizar</a>
+            <a href="#contacto" class="btn btn-outline magnetic" data-i18n="pricing.btn">Cotizar</a>
           </div>
         </div>
       </div>
@@ -476,15 +481,15 @@
     <section id="contacto" class="contacto-section">
       <div class="container">
         <div class="contact-inner">
-          <span class="section-tag">[ CORTE FINAL ]</span>
-          <h2 class="section-title">HAGAMOS EL <em class="serif"><span class="highlight-yellow">CORTE</span></em> JUNTOS</h2>
+          <span class="section-tag" data-i18n="contacto.tag">[ CORTE FINAL ]</span>
+          <h2 class="section-title" data-i18n="contacto.title">HAGAMOS EL <em class="serif"><span class="highlight-yellow">CORTE</span></em> JUNTOS</h2>
           
-          <p class="contact-desc">
+          <p class="contact-desc" data-i18n="contacto.desc">
             Contáctanos de forma directa. Respondemos tus consultas de inmediato para coordinar la edición y el manejo orgánico de tus canales.
           </p>
 
           <div class="contact-buttons">
-            <a href="mailto:frannare17@gmail.com,alejocabana29@gmail.com?subject=Edición%20de%20Video" class="btn btn-white magnetic">Enviar Correo</a>
+            <a href="mailto:frannare17@gmail.com,alejocabana29@gmail.com?subject=Edición%20de%20Video" class="btn btn-white magnetic" data-i18n="contacto.btn1">Enviar Correo</a>
             <a href="https://www.instagram.com/alejo.caba/" target="_blank" rel="noopener" class="btn btn-outline-white magnetic">IG Alejo</a>
             <a href="https://www.instagram.com/frann_are/" target="_blank" rel="noopener" class="btn btn-outline-white magnetic">IG Francisco</a>
           </div>
@@ -495,7 +500,7 @@
             <span>frannare17@gmail.com</span>
           </div>
           
-          <div class="contact-footer">
+          <div class="contact-footer" data-i18n="contacto.footer">
             CABAÑA & ARELLANO © 2026 — HECHO EN SANTA FE, ARGENTINA
           </div>
         </div>
