@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 
 export default defineConfig({
   server: {
@@ -12,9 +11,9 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        alejo: resolve(__dirname, 'alejocabana/index.html'),
-        francisco: resolve(__dirname, 'franciscoarellano/index.html')
+        main: 'index.html',
+        alejo: 'alejocabana/index.html',
+        francisco: 'franciscoarellano/index.html'
       }
     }
   }
