@@ -1,22 +1,22 @@
 import { gsap } from 'gsap';
 
 const LOCAL_SOURCES = [
-  "./Videos/TERMINADO.mp4",
-  "./Videos/voltra.mp4",
-  "./Videos/video3.mp4",
-  "./Videos/videeo4.mp4",
-  "./Videos/Video5.mp4",
-  "./Videos/video6.mp4",
-  "./Videos/video7.mp4",
-  "./Videos/video8.mp4",
-  "./Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4",
-  "./Videos/antesydespues.mp4",
-  "./Videos/video1.mp4",
-  "./Videos/video2.mp4",
-  "./Videos/video9.mp4",
-  "./Videos/real_state1.mp4",
-  "./Videos/real_state2.mp4",
-  "./Videos/educativo.mp4"
+  "/Videos/TERMINADO.mp4",
+  "/Videos/voltra.mp4",
+  "/Videos/video3.mp4",
+  "/Videos/videeo4.mp4",
+  "/Videos/Video5.mp4",
+  "/Videos/video6.mp4",
+  "/Videos/video7.mp4",
+  "/Videos/video8.mp4",
+  "/Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4",
+  "/Videos/antesydespues.mp4",
+  "/Videos/video1.mp4",
+  "/Videos/video2.mp4",
+  "/Videos/video9.mp4",
+  "/Videos/real_state1.mp4",
+  "/Videos/real_state2.mp4",
+  "/Videos/educativo.mp4"
 ];
 
 export function initVideoTimeline() {
