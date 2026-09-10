@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 const LOCAL_SOURCES = [
   "/Videos/voltra_1.mp4",
   "/Videos/voltra.mp4",
+  "/Videos/rodados_reel4.mp4",
   "/Videos/animacion_1.mp4",
   "/Videos/animacion_2.mp4",
   "/Videos/antesydespues.mp4",
@@ -12,9 +13,11 @@ const LOCAL_SOURCES = [
   "/Videos/consultora_parte2_ivana.mp4",
   "/Videos/consultoria_finan.mp4",
   "/Videos/cosmetica_mendoza_1_.mp4",
+  "/Videos/de_estrada.mp4",
   "/Videos/doctor.mp4",
   "/Videos/educativo.mp4",
   "/Videos/haciendo_que_artistas_firmen_mis_disenos_hasta_llegar_a_duki_frozouda_insert_producciones_fr.mp4",
+  "/Videos/medic.mp4",
   "/Videos/medico1_1_.mp4",
   "/Videos/medico_3.mp4",
   "/Videos/real_state1.mp4",
@@ -300,5 +303,6 @@ export function initVideoTimeline() {
     }
   }, { passive: true });
 }
+
 
 
