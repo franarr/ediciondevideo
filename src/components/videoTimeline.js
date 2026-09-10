@@ -1,22 +1,42 @@
 import { gsap } from 'gsap';
 
 const LOCAL_SOURCES = [
-  "/Videos/TERMINADO.mp4",
+  "/Videos/Voltra 1.mp4",
   "/Videos/voltra.mp4",
-  "/Videos/video3.mp4",
+  "/Videos/animacion_1.mp4",
+  "/Videos/animacion_2.mp4",
+  "/Videos/antesydespues.mp4",
+  "/Videos/arnies cafe.mp4",
+  "/Videos/CERVEZA DEL RIO.mp4",
+  "/Videos/consultora_2 (1).mp4",
+  "/Videos/consultora_2.mp4",
+  "/Videos/consultora_parte2_ivana.mp4",
+  "/Videos/consultoria finan.mp4",
+  "/Videos/cosmetica mendoza  (1).mp4",
+  "/Videos/doctor.mp4",
+  "/Videos/educativo.mp4",
+  "/Videos/Haciendo que artistas firmen mis diseños hasta llegar a @duki @frozouda @insert_producciones @fr.mp4",
+  "/Videos/medico1 (1).mp4",
+  "/Videos/medico_3.mp4",
+  "/Videos/PARTE 2.mp4",
+  "/Videos/real_state1.mp4",
+  "/Videos/real_state2.mp4",
+  "/Videos/real_state_ia.mp4",
+  "/Videos/Reel 3 Rodados V2.mp4",
+  "/Videos/Si pasas muchas horas en la misma posición te dejo estos 3 ejercicios.mp4",
+  "/Videos/Te explico el fenómeno de El Niño en 30 o 40 segundos.mp4",
+  "/Videos/Un año con muchos desafios.mp4",
   "/Videos/videeo4.mp4",
+  "/Videos/video1.mp4",
+  "/Videos/video2.mp4",
+  "/Videos/video3.mp4",
   "/Videos/Video5.mp4",
   "/Videos/video6.mp4",
   "/Videos/video7.mp4",
   "/Videos/video8.mp4",
-  "/Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4",
-  "/Videos/antesydespues.mp4",
-  "/Videos/video1.mp4",
-  "/Videos/video2.mp4",
   "/Videos/video9.mp4",
-  "/Videos/real_state1.mp4",
-  "/Videos/real_state2.mp4",
-  "/Videos/educativo.mp4"
+  "/Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4",
+  "/Videos/¿Ganar menos pero seguro o asumir riesgos.mp4"
 ];
 
 export function initVideoTimeline() {
@@ -282,3 +302,4 @@ export function initVideoTimeline() {
     }
   }, { passive: true });
 }
+
