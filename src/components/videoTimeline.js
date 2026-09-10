@@ -1,31 +1,29 @@
 import { gsap } from 'gsap';
 
 const LOCAL_SOURCES = [
-  "/Videos/Voltra 1.mp4",
+  "/Videos/voltra_1.mp4",
   "/Videos/voltra.mp4",
   "/Videos/animacion_1.mp4",
   "/Videos/animacion_2.mp4",
   "/Videos/antesydespues.mp4",
-  "/Videos/arnies cafe.mp4",
-  "/Videos/CERVEZA DEL RIO.mp4",
-  "/Videos/consultora_2 (1).mp4",
+  "/Videos/arnies_cafe.mp4",
+  "/Videos/cerveza_del_rio.mp4",
   "/Videos/consultora_2.mp4",
   "/Videos/consultora_parte2_ivana.mp4",
-  "/Videos/consultoria finan.mp4",
-  "/Videos/cosmetica mendoza  (1).mp4",
+  "/Videos/consultoria_finan.mp4",
+  "/Videos/cosmetica_mendoza_1_.mp4",
   "/Videos/doctor.mp4",
   "/Videos/educativo.mp4",
-  "/Videos/Haciendo que artistas firmen mis diseños hasta llegar a @duki @frozouda @insert_producciones @fr.mp4",
-  "/Videos/medico1 (1).mp4",
+  "/Videos/haciendo_que_artistas_firmen_mis_disenos_hasta_llegar_a_duki_frozouda_insert_producciones_fr.mp4",
+  "/Videos/medico1_1_.mp4",
   "/Videos/medico_3.mp4",
-  "/Videos/PARTE 2.mp4",
   "/Videos/real_state1.mp4",
   "/Videos/real_state2.mp4",
   "/Videos/real_state_ia.mp4",
-  "/Videos/Reel 3 Rodados V2.mp4",
-  "/Videos/Si pasas muchas horas en la misma posición te dejo estos 3 ejercicios.mp4",
-  "/Videos/Te explico el fenómeno de El Niño en 30 o 40 segundos.mp4",
-  "/Videos/Un año con muchos desafios.mp4",
+  "/Videos/reel_3_rodados_v2.mp4",
+  "/Videos/si_pasas_muchas_horas_en_la_misma_posicion_te_dejo_estos_3_ejercicios.mp4",
+  "/Videos/te_explico_el_fenomeno_de_el_nino_en_30_o_40_segundos.mp4",
+  "/Videos/un_ano_con_muchos_desafios.mp4",
   "/Videos/videeo4.mp4",
   "/Videos/video1.mp4",
   "/Videos/video2.mp4",
@@ -35,8 +33,8 @@ const LOCAL_SOURCES = [
   "/Videos/video7.mp4",
   "/Videos/video8.mp4",
   "/Videos/video9.mp4",
-  "/Videos/WhatsApp Video 2026-06-16 at 18.52.55.mp4",
-  "/Videos/¿Ganar menos pero seguro o asumir riesgos.mp4"
+  "/Videos/whatsapp_video_2026_06_16_at_18.52.55.mp4",
+  "/Videos/_ganar_menos_pero_seguro_o_asumir_riesgos.mp4"
 ];
 
 export function initVideoTimeline() {
@@ -302,4 +300,5 @@ export function initVideoTimeline() {
     }
   }, { passive: true });
 }
+
 
