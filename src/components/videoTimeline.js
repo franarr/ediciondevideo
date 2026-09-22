@@ -4,6 +4,7 @@ const LOCAL_SOURCES = [
   "/Videos/voltra_1.mp4",
   "/Videos/voltra.mp4",
   "/Videos/rodados_reel4.mp4",
+  "/Videos/_ganar_menos_pero_seguro_o_asumir_riesgos.mp4",
   "/Videos/animacion_1.mp4",
   "/Videos/animacion_2.mp4",
   "/Videos/antesydespues.mp4",
@@ -18,11 +19,12 @@ const LOCAL_SOURCES = [
   "/Videos/educativo.mp4",
   "/Videos/haciendo_que_artistas_firmen_mis_disenos_hasta_llegar_a_duki_frozouda_insert_producciones_fr.mp4",
   "/Videos/medic.mp4",
-  "/Videos/medico1_1_.mp4",
   "/Videos/medico_3.mp4",
+  "/Videos/medico1_1_.mp4",
+  "/Videos/medicos_odontologos.mp4",
+  "/Videos/real_state_ia.mp4",
   "/Videos/real_state1.mp4",
   "/Videos/real_state2.mp4",
-  "/Videos/real_state_ia.mp4",
   "/Videos/reel_3_rodados_v2.mp4",
   "/Videos/si_pasas_muchas_horas_en_la_misma_posicion_te_dejo_estos_3_ejercicios.mp4",
   "/Videos/te_explico_el_fenomeno_de_el_nino_en_30_o_40_segundos.mp4",
@@ -31,13 +33,12 @@ const LOCAL_SOURCES = [
   "/Videos/video1.mp4",
   "/Videos/video2.mp4",
   "/Videos/video3.mp4",
-  "/Videos/Video5.mp4",
+  "/Videos/video5.mp4",
   "/Videos/video6.mp4",
   "/Videos/video7.mp4",
   "/Videos/video8.mp4",
   "/Videos/video9.mp4",
-  "/Videos/whatsapp_video_2026_06_16_at_18.52.55.mp4",
-  "/Videos/_ganar_menos_pero_seguro_o_asumir_riesgos.mp4"
+  "/Videos/whatsapp_video_2026_06_16_at_18.52.55.mp4"
 ];
 
 export function initVideoTimeline() {
@@ -303,6 +304,7 @@ export function initVideoTimeline() {
     }
   }, { passive: true });
 }
+
 
 
 
