@@ -3,12 +3,10 @@ import { gsap } from 'gsap';
 const LOCAL_SOURCES = [
   "/Videos/voltra_1.mp4",
   "/Videos/voltra.mp4",
-  "/Videos/reel_3_rodados_v2.mp4",
   "/Videos/boyz1.mp4",
   "/Videos/medicos_odontologos.mp4",
   "/Videos/boyz2.mp4",
   "/Videos/dermapiel_graphic.mp4",
-  "/Videos/boyz3.mp4",
   "/Videos/_ganar_menos_pero_seguro_o_asumir_riesgos.mp4",
   "/Videos/animacion_1.mp4",
   "/Videos/animacion_2.mp4",
@@ -308,6 +306,7 @@ export function initVideoTimeline() {
     }
   }, { passive: true });
 }
+
 
 
 
