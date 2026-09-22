@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 const LOCAL_SOURCES = [
   "/Videos/voltra_1.mp4",
   "/Videos/voltra.mp4",
-  "/Videos/rodados_reel4.mp4",
+  "/Videos/reel_3_rodados_v2.mp4",
   "/Videos/boyz1.mp4",
   "/Videos/medicos_odontologos.mp4",
   "/Videos/boyz2.mp4",
@@ -29,7 +29,7 @@ const LOCAL_SOURCES = [
   "/Videos/real_state_ia.mp4",
   "/Videos/real_state1.mp4",
   "/Videos/real_state2.mp4",
-  "/Videos/reel_3_rodados_v2.mp4",
+  "/Videos/rodados_reel4.mp4",
   "/Videos/si_pasas_muchas_horas_en_la_misma_posicion_te_dejo_estos_3_ejercicios.mp4",
   "/Videos/te_explico_el_fenomeno_de_el_nino_en_30_o_40_segundos.mp4",
   "/Videos/un_ano_con_muchos_desafios.mp4",
@@ -308,6 +308,7 @@ export function initVideoTimeline() {
     }
   }, { passive: true });
 }
+
 
 
 
