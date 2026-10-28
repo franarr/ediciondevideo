@@ -4,7 +4,7 @@ Portfolio de **Alejo Cabaña** y **Francisco Arellano**, editores de video y cre
 
 - Online: https://ediciondevideo.vercel.app (se publica solo al hacer push a `main`)
 - Stack: Vite + JavaScript, GSAP/ScrollTrigger, Lenis
-- Videos e imágenes: Cloudflare R2 (no van en git)
+- Videos e imágenes: se publican junto con la web en Vercel (plan gratis, sin tarjeta)
 
 ---
 
@@ -106,27 +106,22 @@ Cualquier texto puede estar en varios idiomas: `"title": { "es": "Hola", "en": "
    - Genera la portada de cada video y pasa las imágenes a WebP.
    - Los videos nuevos se agregan solos al final de `projects.json` → completá `title` y `rubro`.
 3. **Mirá cómo queda:** `npm run dev`
-4. **Subí los archivos a R2:** `npm run upload` (solo sube lo nuevo)
-5. **Publicá:** commit + push de los JSON. Vercel actualiza la web.
+4. **Publicá:** commit + push de `src/data` y `public/media`. Vercel actualiza la web.
+
+O directamente: doble click en **`Subir videos.cmd`**, que hace todos estos pasos y pregunta los datos (ver `COMO-SUBIR-VIDEOS.md`).
 
 > Requiere ffmpeg: `winget install Gyan.FFmpeg`
 
 ---
 
-## Hosting de videos: Cloudflare R2 (configuración inicial, una sola vez)
+## Hosting
 
-R2 es gratis hasta 10 GB y **no cobra por tráfico**, así que no importa cuánta gente vea los videos.
+Todo (web + videos) se publica en **Vercel**, en el plan gratuito y sin tarjeta cargada: si algún mes se superara el límite
+de tráfico (100 GB ≈ 20.000 reproducciones), Vercel pausa la página en lugar de cobrar.
 
-1. Crear cuenta en https://dash.cloudflare.com → **R2** → activar el plan gratuito.
-2. **Create bucket** → nombre `portfolio-media`.
-3. En el bucket → **Settings → Public access → R2.dev subdomain → Allow**. Copiá la URL (`https://pub-xxxx.r2.dev`).
-   *(Más adelante conviene conectar un dominio propio, ej. `media.cabanaarellano.com`.)*
-4. **R2 → Manage R2 API Tokens → Create API token** con permiso *Object Read & Write* sobre ese bucket. Guardá Account ID, Access Key ID y Secret.
-5. Copiá `.env.example` como `.env` y completalo.
-6. `npm run upload` para subir todo lo de `public/media`.
-7. En **Vercel → Settings → Environment Variables** agregá `VITE_MEDIA_BASE_URL` con la URL del paso 3, y volvé a desplegar.
-
-> Si falta `VITE_MEDIA_BASE_URL` en Vercel, el build falla a propósito: así queda online la versión anterior en vez de una sin videos.
+Los originales pesados quedan en `media-src/` (fuera de git); al repo solo va la versión comprimida de `public/media/`.
+Si en el futuro hiciera falta mover los videos a otro servicio, alcanza con subir `public/media` y definir
+`VITE_MEDIA_BASE_URL` con la nueva URL.
 
 ---
 
@@ -140,7 +135,7 @@ src/components/          → timeline, grilla de trabajos, lightbox, casos, cont
 src/i18n/                → textos en español, inglés y portugués
 src/styles/              → main.css + sections.css
 scripts/optimize-media.mjs → compresión de videos e imágenes
-scripts/upload-r2.mjs      → subida a Cloudflare R2
+scripts/nuevo-video.mjs    → asistente de "Subir videos.cmd"
 media-src/               → originales (no van a git)
-public/media/            → procesados (no van a git, se suben a R2)
+public/media/            → versión comprimida (sí va a git y se publica)
 ```

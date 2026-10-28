@@ -3,8 +3,8 @@
 
 export const SITE_URL = 'https://ediciondevideo.vercel.app';
 
-// Dónde están los videos/portadas. En local se sirven desde public/media;
-// en producción se define VITE_MEDIA_BASE_URL (ej: https://pub-xxxx.r2.dev) en Vercel.
+// Dónde están los videos y portadas (public/media, se publica junto con la web).
+// Si algún día se mudan a otro hosting, alcanza con definir VITE_MEDIA_BASE_URL.
 export const MEDIA_BASE = (import.meta.env.VITE_MEDIA_BASE_URL || '/media').replace(/\/$/, '');
 
 export const PEOPLE = {

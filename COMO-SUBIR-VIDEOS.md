@@ -10,7 +10,7 @@
 4. Respondé lo que pregunta por cada video: **título**, **cliente** y **número de rubro**.
 5. Cuando pregunte *¿Publicar en la web ahora?* poné `s`. En 1-2 minutos está online.
 
-Listo. Comprime los videos, genera la portada, los sube a Cloudflare y actualiza la web sola.
+Listo. Comprime los videos, genera la portada y actualiza la web sola.
 
 > Los testimonios, casos de éxito y portadas se cargan escribiendo en `src/data/testimonials.json`, `cases.json` y `covers.json` (hay ejemplos en el README). Si no querés tocar eso, pasale los textos a Fran.
 
@@ -38,16 +38,12 @@ Listo. Comprime los videos, genera la portada, los sube a Cloudflare y actualiza
    npm install
    ```
 
-4. **Claves de Cloudflare** — Fran te pasa por privado (WhatsApp, nunca en un grupo ni en el repo) el contenido del archivo `.env`.
-   Creá un archivo llamado `.env` dentro de la carpeta `Portfolio` y pegalo.
-
 Desde ahí ya podés usar **`Subir videos.cmd`**.
 
 ---
 
 ## Si algo falla
 
-- **"Faltan datos de R2 en .env"** → falta el archivo `.env` (paso 4).
 - **"ffmpeg no se reconoce"** → cerrá y abrí de nuevo la ventana después de instalar (paso 1).
 - **Error en `git push`** → no aceptaste la invitación de GitHub o falta `gh auth login` (paso 2).
 - **Conflicto en git** → avisale a Fran antes de tocar nada.

@@ -3,8 +3,6 @@ dist/
 .DS_Store
 .env
 .env.*
-!.env.example
 
-# Originales pesados: se procesan con `npm run media` y se suben a R2 con `npm run upload`
+# Originales pesados: se comprimen con `npm run media` y el resultado (public/media) sí va al repo
 media-src/
-public/media/

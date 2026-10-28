@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
@@ -59,16 +59,7 @@ const htmlTemplate = () => ({
   },
 });
 
-export default defineConfig(({ command, mode }) => {
-  // En Vercel los videos NO están en el repo: sin la URL de R2 la web saldría sin videos.
-  // Fallar el build deja online la versión anterior en lugar de publicar una rota.
-  if (command === 'build' && process.env.VERCEL && !loadEnv(mode, process.cwd()).VITE_MEDIA_BASE_URL) {
-    throw new Error('Falta VITE_MEDIA_BASE_URL (URL pública de R2) en Vercel → Settings → Environment Variables.');
-  }
-  return config;
-});
-
-const config = {
+export default defineConfig({
   plugins: [htmlTemplate()],
   server: {
     port: 3000,
@@ -86,4 +77,4 @@ const config = {
       },
     },
   },
-};
+});
