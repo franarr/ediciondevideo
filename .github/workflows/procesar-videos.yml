@@ -1,0 +1,59 @@
+# Procesa los videos que se suben desde cabanayarellano.vercel.app/admin.
+# El admin los deja en la rama "admin-inbox"; acá se comprimen, se agregan a la web
+# (rama main → Vercel publica) y la bandeja se vacía. Gratis porque el repo es público.
+
+name: Procesar videos del admin
+
+on:
+  push:
+    branches: [admin-inbox]
+  workflow_dispatch:
+
+concurrency:
+  group: procesar-videos
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  procesar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Traer lo que se subió
+        run: |
+          git fetch --depth=1 origin admin-inbox
+          echo "INBOX_SHA=$(git rev-parse FETCH_HEAD)" >> "$GITHUB_ENV"
+          git archive FETCH_HEAD inbox | tar -x || echo "Sin carpeta inbox"
+
+      - name: Comprimir y completar datos
+        run: node scripts/apply-inbox.mjs
+
+      - name: Publicar en la web
+        run: |
+          git config user.name "Admin del portfolio"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/media src/data
+          if git diff --cached --quiet; then
+            echo "No hay nada nuevo para publicar."
+          else
+            git commit -m "Admin: agregar $(cat .inbox-summary)"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Vaciar la bandeja
+        # Solo si nadie subió otro video mientras tanto (si no, lo procesa la próxima corrida)
+        run: git push --force-with-lease="refs/heads/admin-inbox:$INBOX_SHA" origin :refs/heads/admin-inbox || echo "Llegaron videos nuevos; quedan para la próxima corrida."

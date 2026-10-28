@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · Cabaña & Arellano</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">CABAÑA <em>&</em> ARELLANO <span>admin</span></a>
+    <div class="user" id="user" hidden>
+      <img id="user-avatar" alt="">
+      <span id="user-name"></span>
+      <button class="link" id="logout">Salir</button>
+    </div>
+  </header>
+
+  <!-- ─── Login ─── -->
+  <main class="screen" id="screen-login" hidden>
+    <div class="card login">
+      <h1>Cargar trabajos</h1>
+      <p>Entrá con tu cuenta de GitHub para subir videos y editar los datos de la web.</p>
+      <a class="btn" href="/api/auth/login">Entrar con GitHub</a>
+      <p class="msg error" id="login-error" hidden></p>
+    </div>
+  </main>
+
+  <!-- ─── App ─── -->
+  <main class="screen" id="screen-app" hidden>
+    <p class="msg demo" id="demo-banner" hidden>Modo demo: podés probar todo, pero no se guarda nada.</p>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="upload" role="tab">Subir videos</button>
+      <button class="tab" data-tab="edit" role="tab">Videos publicados</button>
+    </nav>
+
+    <!-- Subir -->
+    <section class="panel" id="tab-upload">
+      <label class="drop" id="drop">
+        <input type="file" id="file-input" accept="video/*" multiple hidden>
+        <strong>Arrastrá los videos acá</strong>
+        <span>o tocá para elegirlos · hasta 90 MB cada uno</span>
+      </label>
+
+      <div class="queue" id="queue"></div>
+
+      <div class="actions" id="upload-actions" hidden>
+        <button class="btn" id="publish">Publicar</button>
+        <span class="hint">Después de publicar, la web se actualiza sola en unos 5 minutos.</span>
+      </div>
+      <p class="msg" id="upload-msg" hidden></p>
+    </section>
+
+    <!-- Editar -->
+    <section class="panel" id="tab-edit" hidden>
+      <div class="edit-bar">
+        <input type="search" id="search" placeholder="Buscar por título, cliente o rubro…">
+        <button class="btn" id="save" disabled>Guardar cambios</button>
+      </div>
+      <p class="msg" id="save-msg" hidden></p>
+      <div class="list" id="list"></div>
+    </section>
+  </main>
+
+  <template id="tpl-item">
+    <article class="item">
+      <div class="thumb"><img alt="" loading="lazy"><video muted playsinline hidden></video></div>
+      <div class="fields">
+        <label class="wide">Título <input name="title" required></label>
+        <label>Cliente <input name="client" placeholder="Opcional"></label>
+        <label>Rubro <select name="rubro" required></select></label>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="featured"> Destacado (Mesa de trabajo)</label>
+          <label class="check edit-only"><input type="checkbox" name="hero"> Arriba de todo</label>
+          <label class="check edit-only"><input type="checkbox" name="hidden"> Ocultar de la web</label>
+        </div>
+        <p class="meta"></p>
+      </div>
+      <button class="remove upload-only" aria-label="Quitar">✕</button>
+    </article>
+  </template>
+
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>

@@ -6,3 +6,7 @@ dist/
 
 # Originales pesados: se comprimen con `npm run media` y el resultado (public/media) sí va al repo
 media-src/
+
+# Bandeja temporal del admin (la procesa GitHub Actions)
+inbox/
+.inbox-summary

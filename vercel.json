@@ -1,4 +1,9 @@
 {
+  "git": {
+    "deploymentEnabled": {
+      "admin-inbox": false
+    }
+  },
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -7,6 +12,10 @@
     {
       "source": "/images/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
     }
   ]
 }

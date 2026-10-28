@@ -74,6 +74,7 @@ export default defineConfig({
         main: 'index.html',
         alejo: 'alejocabana/index.html',
         francisco: 'franciscoarellano/index.html',
+        admin: 'admin/index.html',
       },
     },
   },
