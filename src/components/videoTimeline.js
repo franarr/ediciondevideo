@@ -2,7 +2,8 @@ import { featuredProjects, formatDuration } from '../data';
 import { t, pick } from '../i18n/i18n';
 import { escapeHtml } from '../utils/dom';
 
-const TRACK_LABEL_WIDTH = 100;
+// Ancho de la columna de nombres de pista (V1, T, A1): se lee del CSS (más angosta en celular)
+let TRACK_LABEL_WIDTH = 100;
 const MIN_CLIP_WIDTH = 96;
 const PX_PER_SECOND = 7;
 const FPS = 30;
@@ -28,6 +29,8 @@ export function initVideoTimeline() {
   const video = document.getElementById('editor-video');
   const section = document.getElementById('estudio');
   if (!video || !section) return;
+
+  TRACK_LABEL_WIDTH = document.querySelector('.track-label')?.offsetWidth || 100;
 
   const clips = featuredProjects();
   if (!clips.length) {

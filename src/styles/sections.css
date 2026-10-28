@@ -231,9 +231,6 @@
 
 /* Aviso de que los trabajos son una muestra */
 .work-note {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
   margin-bottom: 1.75rem;
   padding: 0.85rem 1.1rem;
   border: 1px dashed var(--gray-300);
@@ -242,7 +239,9 @@
 }
 .work-note::before {
   content: "";
-  flex: none;
+  display: inline-block;
+  margin-right: 0.6rem;
+  vertical-align: middle;
   width: 8px;
   height: 8px;
   border-radius: 50%;
