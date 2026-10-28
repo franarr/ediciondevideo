@@ -40,7 +40,8 @@
   align-items: flex-end;
   justify-content: center;
 }
-/* Nombre gigante calado detrás de la foto */
+/* Nombre gigante detrás de la foto, teñido con el color de cada uno.
+   (Relleno y no contorno: la fuente tiene trazos superpuestos que el contorno deja a la vista) */
 .member-bigname {
   position: absolute;
   top: 6%;
@@ -53,8 +54,7 @@
   letter-spacing: -0.05em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--gray-300);
+  color: color-mix(in srgb, var(--tone) 28%, var(--white));
   translate: -50% 0; /* centrado aparte: el desplazamiento con scroll usa transform */
   pointer-events: none;
 }
@@ -246,7 +246,7 @@ body[data-person="francisco"] .team-link { display: none; }
 }
 .trabajos-section > .container { position: relative; }
 
-/* ─── CONTACTO: texto gigante calado que pasa de fondo ─── */
+/* ─── CONTACTO: texto gigante que pasa de fondo ─── */
 .contacto-section { position: relative; overflow: hidden; }
 .contacto-section > .container { position: relative; z-index: 1; }
 .contacto-section::before {
@@ -260,8 +260,7 @@ body[data-person="francisco"] .team-link { display: none; }
   line-height: 1;
   letter-spacing: -0.04em;
   white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.05);
   transform: translateY(-50%);
   animation: contact-scroll 60s linear infinite;
   pointer-events: none;
