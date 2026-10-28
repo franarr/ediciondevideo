@@ -90,29 +90,40 @@ function renderTestimonials() {
   // Frases cortas que más se repiten en las reseñas
   highlights.innerHTML = reviewHighlights.map((phrase) => `<li>“${escapeHtml(pick(phrase))}”</li>`).join('');
 
-  grid.innerHTML = testimonials
-    .map(
-      (item, i) => `
-      <figure class="testimonial">
-        ${item.image ? `<img class="testimonial-shot" src="${imageUrl(item.image)}" alt="${escapeHtml(item.name || '')}" loading="lazy" decoding="async">` : ''}
+  const card = (item, i, copy) => {
+    const identity = item.logo
+      ? `<img class="testimonial-logo" src="${imageUrl(item.logo)}" alt="${escapeHtml(item.name)}" loading="lazy">`
+      : item.avatar
+        ? `<img class="testimonial-avatar" src="${imageUrl(item.avatar)}" alt="" loading="lazy">`
+        : `<span class="testimonial-avatar is-initial" aria-hidden="true">${escapeHtml((item.name || '?').charAt(0))}</span>`;
+    return `
+      <figure class="testimonial"${copy ? ' aria-hidden="true"' : ''}>
         ${item.quote ? `<blockquote>“${escapeHtml(pick(item.quote))}”</blockquote>` : ''}
+        ${item.image ? `<img class="testimonial-shot" src="${imageUrl(item.image)}" alt="" loading="lazy" decoding="async">` : ''}
         <figcaption>
-          ${
-            item.avatar
-              ? `<img class="testimonial-avatar" src="${imageUrl(item.avatar)}" alt="" loading="lazy">`
-              : `<span class="testimonial-avatar is-initial" aria-hidden="true">${escapeHtml((item.name || '?').charAt(0))}</span>`
-          }
+          ${identity}
           <span><strong>${escapeHtml(item.name || '')}</strong>${item.role ? `<small>${escapeHtml(pick(item.role))}</small>` : ''}</span>
           ${item.source ? `<em class="testimonial-source">${escapeHtml(item.source)}</em>` : ''}
         </figcaption>
-        ${item.video && projectById(item.video) ? `<button class="testimonial-video" data-testimonial="${i}">▶ ${escapeHtml(t('testimonios.watch'))}</button>` : ''}
-      </figure>`
-    )
-    .join('');
+        ${item.video && projectById(item.video) ? `<button class="testimonial-video" data-testimonial="${i}"${copy ? ' tabindex="-1"' : ''}>▶ ${escapeHtml(t('testimonios.watch'))}</button>` : ''}
+      </figure>`;
+  };
 
-  grid.querySelectorAll('[data-testimonial]').forEach((btn) =>
-    btn.addEventListener('click', () => openLightbox([projectById(testimonials[Number(btn.dataset.testimonial)].video)]))
-  );
+  // Cintas que se mueven solas: con muchos testimonios, dos filas en sentidos opuestos.
+  // Cada fila se repite dos veces para que el loop no tenga saltos.
+  const indexed = testimonials.map((item, i) => [item, i]);
+  const rows = indexed.length >= 6
+    ? [indexed.filter((_, k) => k % 2 === 0), indexed.filter((_, k) => k % 2 === 1)]
+    : [indexed];
+  grid.innerHTML = rows
+    .map((row, r) => {
+      const cards = (copy) => row.map(([item, i]) => card(item, i, copy)).join('');
+      return `
+      <div class="testimonials-row${r % 2 ? ' is-reverse' : ''}" style="--duration:${row.length * 7}s">
+        <div class="testimonials-track">${cards(false)}${cards(true)}</div>
+      </div>`;
+    })
+    .join('');
 }
 
 function renderCovers() {
@@ -134,6 +145,12 @@ function renderCovers() {
 }
 
 export function initShowcase() {
+  // Un solo listener: los testimonios se re-dibujan al cambiar de idioma
+  document.getElementById('testimonials-grid')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-testimonial]');
+    if (btn) openLightbox([projectById(testimonials[Number(btn.dataset.testimonial)].video)]);
+  });
+
   renderHero();
   renderMarquee();
   renderCases();

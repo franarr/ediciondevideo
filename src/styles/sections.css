@@ -226,18 +226,82 @@
   background: var(--off-white);
   padding: 6rem 0;
   border-top: 1px solid var(--gray-100);
+  overflow: hidden;
 }
+
+/* Aviso de que los trabajos son una muestra */
+.work-note {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px dashed var(--gray-300);
+  font-size: 0.85rem;
+  color: var(--gray-700);
+}
+.work-note::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red-marker);
+}
+.work-note a { font-weight: 700; color: var(--black); text-decoration: underline; text-underline-offset: 3px; }
 .testimonials-grid {
-  columns: 3 280px;
-  column-gap: 1.25rem;
+  display: grid;
+  gap: 1.25rem;
   margin-top: 2.5rem;
+  /* Las cintas ocupan todo el ancho de la pantalla, fuera del container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.testimonials-row {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.testimonials-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  padding-right: 1.25rem; /* = gap, para que el loop no salte */
+  animation: testimonials-scroll var(--duration, 60s) linear infinite;
+}
+.testimonials-row.is-reverse .testimonials-track { animation-direction: reverse; }
+.testimonials-row:hover .testimonials-track,
+.testimonials-row:focus-within .testimonials-track { animation-play-state: paused; }
+@keyframes testimonials-scroll {
+  to { transform: translateX(-50%); }
 }
 .testimonial {
-  break-inside: avoid;
-  margin-bottom: 1.25rem;
+  width: 320px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
   background: var(--white);
   border: 1px solid var(--gray-100);
+}
+.testimonial figcaption { margin-top: auto; }
+.testimonial-logo {
+  height: 44px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  flex: none;
+}
+/* Con "animaciones desactivadas" en el sistema la cinta sigue, pero más lenta
+   (se frena al pasar el mouse o tocarla) */
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-track {
+    animation-duration: calc(var(--duration, 60s) * 1.6) !important;
+    animation-iteration-count: infinite !important;
+  }
+}
+@media (max-width: 575px) {
+  .testimonial { width: 270px; padding: 1.25rem; }
 }
 .testimonial-shot {
   width: 100%;

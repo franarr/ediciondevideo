@@ -31,7 +31,6 @@ const visibilityObserver =
 export function autoplayWhenVisible(video) {
   video.muted = true;
   video.playsInline = true;
-  if (prefersReducedMotion()) return; // se queda en el poster
   if (visibilityObserver) visibilityObserver.observe(video);
   else video.play().catch(() => {});
 }

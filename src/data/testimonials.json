@@ -1,16 +1,70 @@
 [
   {
-    "name": "Cluster Media",
-    "role": "Arnie’s Café",
-    "video": "arnies-cafe",
-    "source": "WhatsApp",
-    "quote": "El esfuerzo trae recompensa, felicidades equipo. Nunca en la vida había visto tan lleno Arnie’s, ni en días feriado."
+    "name": "Boyz",
+    "quote": "Amigo, te aplaudo. ¡Qué video! Quedó épico. Hasta portada y todo 🥹",
+    "logo": "testimonials/boyz.webp",
+    "role": "Indumentaria",
+    "video": "boyz1",
+    "source": "WhatsApp"
   },
   {
-    "name": "Mari Mosqueda",
-    "role": "Boyz",
-    "video": "boyz1",
-    "source": "WhatsApp",
-    "quote": "Amigo, te aplaudo. ¡Qué video! Quedó épico. Hasta portada y todo 🥹"
+    "name": "Boyz",
+    "quote": "Gracias fraaan, quedaron chupetones",
+    "logo": "testimonials/boyz.webp",
+    "role": "Indumentaria",
+    "image": "testimonials/boyz-captura-julian.webp",
+    "video": "boyz2",
+    "source": "WhatsApp"
+  },
+  {
+    "name": "Cluster Media",
+    "quote": "El esfuerzo trae recompensa, felicidades equipo. Nunca en la vida había visto tan lleno Arnie’s, ni en días feriado.",
+    "role": "Arnie’s Café",
+    "video": "arnies-cafe",
+    "source": "WhatsApp"
+  },
+  {
+    "name": "Meli Miguel Gestión",
+    "quote": "Me encanta",
+    "avatar": "testimonials/meli-miguel-gestion.webp"
+  },
+  {
+    "name": "Grupo SAC",
+    "quote": "Muy académico, fácil de entender y alineado a la marca",
+    "logo": "testimonials/grupo-sac.webp"
+  },
+  {
+    "name": "Buddy Pets",
+    "quote": "Excelente",
+    "logo": "testimonials/buddy-pets.webp",
+    "role": "Pet Store",
+    "video": "video3"
+  },
+  {
+    "name": "Kinesio Sosa",
+    "quote": "Muy atentos, respuesta rápida",
+    "avatar": "testimonials/kinesio-sosa.webp",
+    "role": "Kinesiología"
+  },
+  {
+    "name": "Rodados S.A.",
+    "quote": "Quedó buenísimo",
+    "logo": "testimonials/rodados-sa.webp",
+    "video": "rodados-reel4"
+  },
+  {
+    "name": "MarketLab",
+    "quote": "Ustedes en edición son impecables",
+    "logo": "testimonials/marketlab.webp"
+  },
+  {
+    "name": "Geopoliticar",
+    "quote": "Na amigo, muy bueno",
+    "avatar": "testimonials/geopoliticar.webp"
+  },
+  {
+    "name": "frandesignn",
+    "quote": "Buena energía y buena onda. ¡Muy pro, amigo!",
+    "avatar": "testimonials/frandesignn.webp"
   }
 ]
