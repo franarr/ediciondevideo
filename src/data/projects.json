@@ -1,0 +1,256 @@
+[
+  {
+    "id": "voltra",
+    "title": "Voltra · AirPods",
+    "client": "Voltra",
+    "rubro": "productos",
+    "featured": true
+  },
+  {
+    "id": "voltra-1",
+    "title": "Voltra · Mini Shaver",
+    "client": "Voltra",
+    "rubro": "productos"
+  },
+  {
+    "id": "boyz1",
+    "title": "¿Por qué está gorra?",
+    "client": "Boyz",
+    "rubro": "indumentaria",
+    "featured": true
+  },
+  {
+    "id": "boyz2",
+    "title": "Que tu hijo sea…",
+    "client": "Boyz",
+    "rubro": "indumentaria"
+  },
+  {
+    "id": "medicos-odontologos",
+    "title": "Odontología: ¿tenés una…?",
+    "client": "",
+    "rubro": "salud",
+    "featured": true
+  },
+  {
+    "id": "dermapiel-graphic",
+    "title": "Dermapiel",
+    "client": "Dermapiel",
+    "rubro": "salud",
+    "featured": true
+  },
+  {
+    "id": "ganar-menos-pero-seguro-o-asumir-riesgos",
+    "title": "¿Ganar menos pero seguro?",
+    "client": "",
+    "rubro": "finanzas",
+    "featured": true
+  },
+  {
+    "id": "animacion-1",
+    "title": "Animación · Trump y el Mundial",
+    "client": "",
+    "rubro": "motion"
+  },
+  {
+    "id": "animacion-2",
+    "title": "Animación · Argentina vs Inglaterra",
+    "client": "",
+    "rubro": "motion",
+    "featured": true
+  },
+  {
+    "id": "antesydespues",
+    "title": "Antes y después de la edición",
+    "client": "",
+    "rubro": "educacion"
+  },
+  {
+    "id": "arnies-cafe",
+    "title": "Arnie’s Café",
+    "client": "Arnie’s Café",
+    "rubro": "gastronomia",
+    "featured": true
+  },
+  {
+    "id": "cerveza-del-rio",
+    "title": "Cerveza del Río",
+    "client": "Cerveza del Río",
+    "rubro": "gastronomia"
+  },
+  {
+    "id": "consultora-2",
+    "title": "Consultora · Hoy te quiero contar",
+    "client": "",
+    "rubro": "finanzas"
+  },
+  {
+    "id": "consultora-parte2-ivana",
+    "title": "Consultora · Parte 2",
+    "client": "Ivana Berón",
+    "rubro": "finanzas"
+  },
+  {
+    "id": "consultoria-finan",
+    "title": "¿Tus inventarios siempre cuadran?",
+    "client": "",
+    "rubro": "finanzas"
+  },
+  {
+    "id": "cosmetica-mendoza-1",
+    "title": "Cosmética · Para empezar",
+    "client": "",
+    "rubro": "belleza"
+  },
+  {
+    "id": "de-estrada",
+    "title": "Le preguntamos al Dr. Estrada",
+    "client": "Dr. Estrada",
+    "rubro": "salud"
+  },
+  {
+    "id": "doctor",
+    "title": "Respondiendo dudas",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "educativo",
+    "title": "Marcas que todos conocemos",
+    "client": "",
+    "rubro": "educacion"
+  },
+  {
+    "id": "haciendo-que-artistas-firmen-mis-disenos-hasta-llegar-a-duki",
+    "title": "Hasta que firme Duki",
+    "client": "",
+    "rubro": "marca-personal"
+  },
+  {
+    "id": "medic",
+    "title": "Dos pacientes, un mismo diagnóstico",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "medico-3",
+    "title": "Cuando un médico…",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "medico1-1",
+    "title": "Lo que nadie te cuenta",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "real-state-ia",
+    "title": "Lotes disponibles",
+    "client": "",
+    "rubro": "inmobiliaria",
+    "featured": true
+  },
+  {
+    "id": "real-state1",
+    "title": "Si estás viendo este video",
+    "client": "",
+    "rubro": "inmobiliaria"
+  },
+  {
+    "id": "real-state2",
+    "title": "Inmobiliaria · Recorrida",
+    "client": "",
+    "rubro": "inmobiliaria"
+  },
+  {
+    "id": "rodados-reel4",
+    "title": "Rodados · Repuestos",
+    "client": "",
+    "rubro": "vehicular"
+  },
+  {
+    "id": "si-pasas-muchas-horas-en-la-misma-posicion-te-dejo-estos-3-e",
+    "title": "3 ejercicios si pasás horas sentado",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "te-explico-el-fenomeno-de-el-nino-en-30-o-40-segundos",
+    "title": "El fenómeno de El Niño en 40 segundos",
+    "client": "",
+    "rubro": "educacion",
+    "featured": true
+  },
+  {
+    "id": "un-ano-con-muchos-desafios",
+    "title": "Un año con muchos desafíos",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "videeo4",
+    "title": "Kinesiología · Rehabilitación",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "video1",
+    "title": "Si ahorrás solo…",
+    "client": "",
+    "rubro": "finanzas"
+  },
+  {
+    "id": "video2",
+    "title": "Así fue como empezó",
+    "client": "",
+    "rubro": "mascotas"
+  },
+  {
+    "id": "video3",
+    "title": "Buddy Pets Santa Fe",
+    "client": "Buddy Pets",
+    "rubro": "mascotas",
+    "hero": true,
+    "featured": true
+  },
+  {
+    "id": "video5",
+    "title": "Se ve…",
+    "client": "",
+    "rubro": "belleza"
+  },
+  {
+    "id": "video6",
+    "title": "Ivana Berón",
+    "client": "Ivana Berón",
+    "rubro": "finanzas",
+    "hero": true
+  },
+  {
+    "id": "video7",
+    "title": "De ser el imperio…",
+    "client": "",
+    "rubro": "educacion"
+  },
+  {
+    "id": "video8",
+    "title": "Si sos hincha de Colón",
+    "client": "",
+    "rubro": "indumentaria",
+    "hero": true
+  },
+  {
+    "id": "video9",
+    "title": "El Mundial del 78",
+    "client": "",
+    "rubro": "educacion"
+  },
+  {
+    "id": "whatsapp-video-2026-06-16-at-18-52-55",
+    "title": "Mismo guion, diferente edición",
+    "client": "",
+    "rubro": "motion",
+    "featured": true
+  }
+]

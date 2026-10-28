@@ -1,3 +1,10 @@
 node_modules/
 dist/
 .DS_Store
+.env
+.env.*
+!.env.example
+
+# Originales pesados: se procesan con `npm run media` y se suben a R2 con `npm run upload`
+media-src/
+public/media/

@@ -1,85 +1,60 @@
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { initCustomCursor } from './animations/cursor';
-import { initVideoTimeline } from './components/videoTimeline';
-import { initScrollAnimations } from './animations/timeline';
-import { initHeroSlider } from './components/heroSlider';
-import { initNosotrosSlider } from './components/nosotrosSlider';
 import { initI18n } from './i18n/i18n';
+import { initCustomCursor } from './animations/cursor';
+import { initScrollAnimations } from './animations/timeline';
+import { initShowcase } from './components/showcase';
+import { initVideoTimeline } from './components/videoTimeline';
+import { initWorkGrid } from './components/workGrid';
+import { initLightbox } from './components/lightbox';
+import { initNosotrosSlider } from './components/nosotrosSlider';
+import { initNavMenu } from './components/navMenu';
+import { initContact } from './components/contact';
+import { prefersReducedMotion } from './utils/dom';
 
-// Register ScrollTrigger to sync with Lenis
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize Lenis Smooth Scroll
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // premium decelerate
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
-    wheelMultiplier: 1,
-    infinite: false,
-  });
+async function init() {
+  // 1. Idioma primero: así las animaciones se enganchan a los textos finales
+  await initI18n();
 
-  // Keep ScrollTrigger synchronized with Lenis scroll ticks
-  lenis.on('scroll', ScrollTrigger.update);
+  // 2. Smooth scroll (desactivado si el sistema pide menos movimiento)
+  let lenis = null;
+  if (!prefersReducedMotion()) {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // premium decelerate
+      smoothWheel: true,
+    });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
 
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  gsap.ticker.lagSmoothing(0);
-
-  // 2. Initialize Components & Animations
-  initCustomCursor();
-  initHeroSlider(); // Initialize the Hero Video Carousel
-  initNosotrosSlider(); // Initialize the Nosotros Photo Switcher
+  // 3. Contenido que se dibuja desde src/data
+  initLightbox();
+  initShowcase();
+  initWorkGrid();
   initVideoTimeline();
+  initNosotrosSlider();
+  initContact();
+
+  // 4. Interacción y animaciones (después de dibujar, para medir bien)
+  initNavMenu(lenis);
+  initCustomCursor();
   initScrollAnimations();
 
-  // 3. Dynamic Active Navbar Links based on current section
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link-item');
+  // Recalcular posiciones cuando terminan de cargar fuentes e imágenes
+  // (si no, el link activo del menú queda desfasado)
+  document.fonts?.ready.then(() => ScrollTrigger.refresh());
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+  let refreshTimer;
+  new ResizeObserver(() => {
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 200);
+  }).observe(document.getElementById('main'));
+}
 
-  sections.forEach(section => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top 40%",
-      end: "bottom 40%",
-      onToggle: (self) => {
-        if (self.isActive) {
-          const id = section.getAttribute('id');
-          navLinks.forEach(link => {
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      }
-    });
-  });
-
-  // Make navigation clicks smooth via Lenis
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        lenis.scrollTo(targetElement, {
-          offset: -80, // Offset for fixed navbar height
-          duration: 1.5,
-          immediate: false
-        });
-      }
-    });
-  });
-
-  // 7. Initialize i18n language switcher
-  initI18n();
-});
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();

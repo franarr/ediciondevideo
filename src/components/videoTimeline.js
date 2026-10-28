@@ -1,315 +1,231 @@
-import { gsap } from 'gsap';
+import { featuredProjects, formatDuration } from '../data';
+import { t, pick } from '../i18n/i18n';
+import { escapeHtml } from '../utils/dom';
 
-const LOCAL_SOURCES = [
-  "/Videos/voltra_1.mp4",
-  "/Videos/voltra.mp4",
-  "/Videos/boyz1.mp4",
-  "/Videos/medicos_odontologos.mp4",
-  "/Videos/boyz2.mp4",
-  "/Videos/dermapiel_graphic.mp4",
-  "/Videos/_ganar_menos_pero_seguro_o_asumir_riesgos.mp4",
-  "/Videos/animacion_1.mp4",
-  "/Videos/animacion_2.mp4",
-  "/Videos/antesydespues.mp4",
-  "/Videos/arnies_cafe.mp4",
-  "/Videos/cerveza_del_rio.mp4",
-  "/Videos/consultora_2.mp4",
-  "/Videos/consultora_parte2_ivana.mp4",
-  "/Videos/consultoria_finan.mp4",
-  "/Videos/cosmetica_mendoza_1_.mp4",
-  "/Videos/de_estrada.mp4",
-  "/Videos/doctor.mp4",
-  "/Videos/educativo.mp4",
-  "/Videos/haciendo_que_artistas_firmen_mis_disenos_hasta_llegar_a_duki_frozouda_insert_producciones_fr.mp4",
-  "/Videos/medic.mp4",
-  "/Videos/medico_3.mp4",
-  "/Videos/medico1_1_.mp4",
-  "/Videos/real_state_ia.mp4",
-  "/Videos/real_state1.mp4",
-  "/Videos/real_state2.mp4",
-  "/Videos/rodados_reel4.mp4",
-  "/Videos/si_pasas_muchas_horas_en_la_misma_posicion_te_dejo_estos_3_ejercicios.mp4",
-  "/Videos/te_explico_el_fenomeno_de_el_nino_en_30_o_40_segundos.mp4",
-  "/Videos/un_ano_con_muchos_desafios.mp4",
-  "/Videos/videeo4.mp4",
-  "/Videos/video1.mp4",
-  "/Videos/video2.mp4",
-  "/Videos/video3.mp4",
-  "/Videos/video5.mp4",
-  "/Videos/video6.mp4",
-  "/Videos/video7.mp4",
-  "/Videos/video8.mp4",
-  "/Videos/video9.mp4",
-  "/Videos/whatsapp_video_2026_06_16_at_18.52.55.mp4"
-];
+const TRACK_LABEL_WIDTH = 100;
+const MIN_CLIP_WIDTH = 96;
+const PX_PER_SECOND = 7;
+const FPS = 30;
+
+const timecode = (secs) => {
+  const h = Math.floor(secs / 3600);
+  const m = Math.floor((secs % 3600) / 60);
+  const s = Math.floor(secs % 60);
+  const f = Math.floor((secs % 1) * FPS);
+  return [h, m, s, f].map((n) => String(n).padStart(2, '0')).join(':');
+};
+
+// Onda de audio decorativa pero estable (siempre igual para el mismo video)
+const waveform = (seed, bars) => {
+  let x = [...seed].reduce((a, c) => a + c.charCodeAt(0), 0);
+  return Array.from({ length: bars }, () => {
+    x = (x * 9301 + 49297) % 233280;
+    return 4 + Math.round((x / 233280) * 22);
+  });
+};
 
 export function initVideoTimeline() {
   const video = document.getElementById('editor-video');
-  const playBtn = document.getElementById('video-play-btn');
-  const playIcon = playBtn?.querySelector('.overlay-play-icon');
-  const pauseIcon = playBtn?.querySelector('.overlay-pause-icon');
-  const viewportContainer = document.querySelector('.video-viewport-container');
-  const soundOverlay = document.getElementById('sound-indicator');
-  
-  const clips = document.querySelectorAll('.timeline-clip');
-  const playhead = document.getElementById('timeline-playhead');
-  const tracksWrapper = document.querySelector('.timeline-tracks-wrapper');
-  const prevClipBtn = document.getElementById('clip-prev');
-  const nextClipBtn = document.getElementById('clip-next');
-  
-  const inspectProj = document.getElementById('inspect-project');
-  const inspectTools = document.getElementById('inspect-tools');
-  const inspectRetention = document.getElementById('inspect-retention');
-  const activeTrackTitle = document.getElementById('active-track-name');
-  const editorTimer = document.getElementById('editor-timer');
-  
-  const fillColor = document.getElementById('fill-color');
-  const fillFx = document.getElementById('fill-fx');
-  const fillSfx = document.getElementById('fill-sfx');
-  const valColor = document.getElementById('slider-val-color');
-  const valFx = document.getElementById('slider-val-fx');
-  const valSfx = document.getElementById('slider-val-sfx');
+  const section = document.getElementById('estudio');
+  if (!video || !section) return;
 
-  if (!video) return;
+  const clips = featuredProjects();
+  if (!clips.length) {
+    section.hidden = true;
+    return;
+  }
 
-  const loadingOverlay = document.getElementById('video-loading');
-  let activeVideoIndex = 0;
+  const $ = (id) => document.getElementById(id);
+  const viewport = document.querySelector('.video-viewport-container');
+  const playBtn = $('video-play-btn');
+  const playIcon = playBtn.querySelector('.overlay-play-icon');
+  const pauseIcon = playBtn.querySelector('.overlay-pause-icon');
+  const loading = $('video-loading');
+  const soundBtn = $('sound-indicator');
+  const scroller = $('editor-timeline');
+  const tracks = $('timeline-tracks');
+  const playhead = $('timeline-playhead');
+  const trackVideo = $('track-video');
 
-  // Video buffering event listeners to show/hide loader
-  video.addEventListener('waiting', () => {
-    loadingOverlay?.classList.remove('hidden');
+  // ─── Layout de la secuencia ───
+  let cursor = 0;
+  let seqTime = 0;
+  const layout = clips.map((clip) => {
+    const width = Math.max(MIN_CLIP_WIDTH, Math.round(clip.duration * PX_PER_SECOND));
+    const item = { clip, left: cursor, width, start: seqTime };
+    cursor += width + 3;
+    seqTime += clip.duration;
+    return item;
   });
-  video.addEventListener('playing', () => {
-    loadingOverlay?.classList.add('hidden');
-    viewportContainer?.classList.remove('is-paused');
-    playIcon?.classList.add('hidden');
-    pauseIcon?.classList.remove('hidden');
-  });
-  video.addEventListener('canplay', () => {
-    loadingOverlay?.classList.add('hidden');
-  });
+  tracks.style.width = `${TRACK_LABEL_WIDTH + cursor}px`;
 
-  // Dynamically adjust for horizontal vs vertical videos
-  video.addEventListener('loadedmetadata', () => {
-    if (video.videoWidth > video.videoHeight) {
-      viewportContainer?.classList.add('is-horizontal');
-    } else {
-      viewportContainer?.classList.remove('is-horizontal');
-    }
-  });
+  trackVideo.innerHTML = layout
+    .map(
+      ({ clip, width }, i) => `
+      <button class="timeline-clip" style="width:${width}px" data-index="${i}" title="${escapeHtml(clip.title)}">
+        <span class="clip-title">${escapeHtml(clip.title)}</span>
+      </button>`
+    )
+    .join('');
 
-  // Set initial video source and play muted (lazy: only load metadata first)
-  video.preload = 'metadata';
-  video.src = LOCAL_SOURCES[activeVideoIndex];
-  video.load();
-  video.play().then(() => {
-    viewportContainer?.classList.remove('is-paused');
-    playIcon?.classList.add('hidden');
-    pauseIcon?.classList.remove('hidden');
-  }).catch(() => {
-    // Autoplay blocked by browser policy, keep paused UI
-    viewportContainer?.classList.add('is-paused');
-    playIcon?.classList.remove('hidden');
-    pauseIcon?.classList.add('hidden');
-  });
+  $('track-text').innerHTML = layout
+    .map(({ width }, i) => `<span class="timeline-clip-static" style="width:${width}px">[ ${['SUBS', 'TITULOS', 'POP-UPS'][i % 3]} ]</span>`)
+    .join('');
 
-  // Play/Pause
-  const togglePlay = () => {
-    if (video.paused) {
-      loadingOverlay?.classList.remove('hidden');
-      video.play().then(() => {
-        viewportContainer?.classList.remove('is-paused');
-        playIcon?.classList.add('hidden');
-        pauseIcon?.classList.remove('hidden');
-        loadingOverlay?.classList.add('hidden');
-      }).catch(err => {
-        console.log("Playback interrupted: ", err);
-        loadingOverlay?.classList.add('hidden');
-      });
-    } else {
-      video.pause();
-      viewportContainer?.classList.add('is-paused');
-      playIcon?.classList.remove('hidden');
-      pauseIcon?.classList.add('hidden');
-    }
+  $('track-audio').innerHTML = layout
+    .map(
+      ({ clip, width }) => `
+      <span class="audio-waveform" style="width:${width}px">
+        ${waveform(clip.id, Math.max(8, Math.round(width / 9))).map((h) => `<span class="wave-bar" style="height:${h}px"></span>`).join('')}
+      </span>`
+    )
+    .join('');
+
+  $('timeline-ruler').innerHTML = layout
+    .map(({ left, start }) => `<span style="left:${TRACK_LABEL_WIDTH + left}px">${timecode(start).slice(3, 8)}</span>`)
+    .join('');
+
+  const clipButtons = [...trackVideo.querySelectorAll('.timeline-clip')];
+
+  // ─── Estado de reproducción ───
+  let active = -1;
+  let wantsPlay = false;
+  let sectionVisible = false;
+
+  const setPlayingUI = (playing) => {
+    viewport.classList.toggle('is-paused', !playing);
+    playIcon.classList.toggle('hidden', playing);
+    pauseIcon.classList.toggle('hidden', !playing);
   };
 
-  playBtn?.addEventListener('click', (e) => {
+  const renderInspector = () => {
+    const { clip } = layout[active];
+    $('inspect-title').textContent = clip.title;
+    $('inspect-client').textContent = clip.client || '—';
+    $('inspect-rubro').textContent = t(`rubro.${clip.rubro}`);
+    $('inspect-format').textContent = t(`format.${clip.orientation}`);
+    $('inspect-duration').textContent = formatDuration(clip.duration);
+    $('active-track-name').textContent = `${clip.id}.mp4`;
+
+    const tags = pick(clip.tags) || [];
+    $('inspect-tags-section').hidden = !tags.length;
+    $('inspect-tags').innerHTML = tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join('');
+  };
+
+  const play = () => {
+    wantsPlay = true;
+    video.play().catch(() => setPlayingUI(false));
+  };
+
+  const load = (index, { autoplay = true, seek = 0 } = {}) => {
+    const changed = index !== active;
+    active = index;
+    clipButtons.forEach((b, i) => {
+      b.classList.toggle('active', i === index);
+      b.setAttribute('aria-pressed', String(i === index));
+    });
+    const { clip } = layout[index];
+    viewport.classList.toggle('is-horizontal', clip.orientation === 'horizontal');
+    renderInspector();
+
+    if (changed) {
+      video.poster = clip.poster;
+      video.preload = 'auto';
+      video.src = clip.src;
+    }
+    if (seek) video.currentTime = seek;
+    if (autoplay) play();
+  };
+
+  // ─── Eventos del video ───
+  video.addEventListener('waiting', () => loading.classList.remove('hidden'));
+  video.addEventListener('canplay', () => loading.classList.add('hidden'));
+  video.addEventListener('playing', () => {
+    loading.classList.add('hidden');
+    setPlayingUI(true);
+  });
+  video.addEventListener('pause', () => setPlayingUI(false));
+  video.addEventListener('ended', () => load((active + 1) % layout.length));
+
+  video.addEventListener('timeupdate', () => {
+    if (!video.duration || active < 0) return;
+    const { left, width, start } = layout[active];
+    const x = TRACK_LABEL_WIDTH + left + (video.currentTime / video.duration) * width;
+    playhead.style.transform = `translateX(${x}px)`;
+    $('editor-timer').textContent = timecode(start + video.currentTime);
+
+    // Mantener el cabezal a la vista mientras corre la secuencia
+    const viewLeft = scroller.scrollLeft + TRACK_LABEL_WIDTH;
+    const viewRight = scroller.scrollLeft + scroller.clientWidth - 40;
+    if (x < viewLeft || x > viewRight) {
+      scroller.scrollTo({ left: Math.max(0, x - TRACK_LABEL_WIDTH - 40), behavior: 'smooth' });
+    }
+  });
+
+  // ─── Controles ───
+  const togglePlay = () => (video.paused ? play() : ((wantsPlay = false), video.pause()));
+  playBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     togglePlay();
   });
-  viewportContainer?.addEventListener('click', togglePlay);
+  viewport.addEventListener('click', togglePlay);
 
-  // Sound Toggle
-  let isMuted = true;
-  video.muted = isMuted;
-
-  soundOverlay?.addEventListener('click', (e) => {
+  $('video-fullscreen-btn').addEventListener('click', (e) => {
     e.stopPropagation();
-    isMuted = !isMuted;
-    video.muted = isMuted;
-    
-    if (isMuted) {
-      soundOverlay.innerHTML = `
-        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-        </svg>
-        AUDIO DESMUTEAR
-      `;
-    } else {
-      soundOverlay.innerHTML = `
-        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-        </svg>
-        AUDIO ON
-      `;
-    }
+    (video.requestFullscreen || video.webkitEnterFullscreen || video.webkitRequestFullscreen)?.call(video);
   });
 
-  const activateClip = (clip) => {
-    clips.forEach(c => c.classList.remove('active'));
-    clip.classList.add('active');
-
-    const index = parseInt(clip.getAttribute('data-video-index'));
-    const proj = clip.getAttribute('data-project');
-    const tools = clip.getAttribute('data-tools');
-    const retention = clip.getAttribute('data-retention');
-    const title = clip.getAttribute('data-title');
-    
-    const valColorNum = clip.getAttribute('data-color');
-    const valFxNum = clip.getAttribute('data-fx');
-    const valSfxNum = clip.getAttribute('data-sfx');
-
-    activeVideoIndex = index;
-    loadingOverlay?.classList.remove('hidden');
-    // Abort any pending download before switching
-    video.pause();
-    video.removeAttribute('src');
-    video.load(); // abort previous
-    video.preload = 'auto';
-    video.src = LOCAL_SOURCES[activeVideoIndex];
-    video.load();
-    video.play().then(() => {
-      viewportContainer?.classList.remove('is-paused');
-      playIcon?.classList.add('hidden');
-      pauseIcon?.classList.remove('hidden');
-      loadingOverlay?.classList.add('hidden');
-    }).catch(err => {
-      console.log(err);
-      loadingOverlay?.classList.add('hidden');
-    });
-
-    if (inspectProj) inspectProj.textContent = proj;
-    if (inspectTools) inspectTools.textContent = tools;
-    if (inspectRetention) inspectRetention.textContent = retention;
-    if (activeTrackTitle) activeTrackTitle.textContent = title;
-
-    gsap.to(fillColor, { width: `${valColorNum}%`, duration: 0.6, ease: "power2.out" });
-    gsap.to(fillFx, { width: `${valFxNum}%`, duration: 0.6, ease: "power2.out" });
-    gsap.to(fillSfx, { width: `${valSfxNum}%`, duration: 0.6, ease: "power2.out" });
-
-    if (valColor) valColor.textContent = `${valColorNum}%`;
-    if (valFx) valFx.textContent = `${valFxNum}%`;
-    if (valSfx) valSfx.textContent = `${valSfxNum}%`;
+  const renderSound = () => {
+    const label = soundBtn.querySelector('span');
+    label.dataset.i18n = video.muted ? 'sound.mute' : 'sound.on';
+    label.textContent = t(label.dataset.i18n);
+    soundBtn.setAttribute('aria-pressed', String(!video.muted));
+    soundBtn.classList.toggle('is-on', !video.muted);
   };
-
-  // Switch Clips
-  clips.forEach(clip => {
-    clip.addEventListener('click', (e) => {
-      e.stopPropagation();
-      activateClip(clip);
-    });
-  });
-
-  prevClipBtn?.addEventListener('click', (e) => {
+  soundBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    const nextIndex = (activeVideoIndex - 1 + clips.length) % clips.length;
-    activateClip(clips[nextIndex]);
+    video.muted = !video.muted;
+    renderSound();
   });
 
-  nextClipBtn?.addEventListener('click', (e) => {
+  $('clip-prev').addEventListener('click', (e) => {
     e.stopPropagation();
-    const nextIndex = (activeVideoIndex + 1) % clips.length;
-    activateClip(clips[nextIndex]);
+    load((active - 1 + layout.length) % layout.length);
+  });
+  $('clip-next').addEventListener('click', (e) => {
+    e.stopPropagation();
+    load((active + 1) % layout.length);
   });
 
-  // Playhead movement
-  video.addEventListener('timeupdate', () => {
-    if (!video.duration) return;
-    
-    const currentSecs = Math.floor(video.currentTime);
-    const ms = Math.floor((video.currentTime - currentSecs) * 30);
-    const secsStr = String(currentSecs).padStart(2, '0');
-    const framesStr = String(ms).padStart(2, '0');
-    if (editorTimer) {
-      editorTimer.textContent = `00:00:${secsStr}:${framesStr}`;
-    }
-
-    if (tracksWrapper && playhead) {
-      const ratio = video.currentTime / video.duration;
-      const containerWidth = tracksWrapper.clientWidth;
-      const offset = 100;
-      const scrollableWidth = containerWidth - offset - 10;
-      const xPos = offset + (scrollableWidth * ratio);
-      playhead.style.left = `${xPos}px`;
-    }
-
+  // Click en un clip: lo abre; click en otra parte de la pista: salta a ese punto
+  trackVideo.addEventListener('click', (e) => {
+    const btn = e.target.closest('.timeline-clip');
+    if (!btn) return;
+    const index = Number(btn.dataset.index);
+    const ratio = (e.clientX - btn.getBoundingClientRect().left) / btn.offsetWidth;
+    const seek = index === active && video.duration ? ratio * video.duration : 0;
+    load(index, { seek });
   });
 
-  // Timeline scrubbing
-  const scrub = (e) => {
-    const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
-    if (!tracksWrapper) return;
-    const bound = tracksWrapper.getBoundingClientRect();
-    const clickX = clientX - bound.left;
-    const offset = 100;
-    const scrollableWidth = bound.width - offset;
-
-    if (clickX > offset) {
-      const percentage = (clickX - offset) / scrollableWidth;
-      if (video.duration) {
-        video.currentTime = percentage * video.duration;
+  // ─── Cargar y reproducir solo cuando la sección está en pantalla ───
+  new IntersectionObserver(
+    ([entry]) => {
+      sectionVisible = entry.isIntersecting;
+      if (sectionVisible) {
+        if (active < 0) load(0, { autoplay: false });
+        if (wantsPlay || video.currentTime === 0) play();
+      } else if (!video.paused) {
+        video.pause();
+        wantsPlay = true; // retomar al volver
       }
-    }
-  };
+    },
+    { threshold: 0.3 }
+  ).observe(section.querySelector('.editor-desktop'));
 
-  tracksWrapper?.addEventListener('mousedown', (e) => {
-    if (e.target.classList.contains('timeline-tracks-wrapper') || 
-        e.target.classList.contains('timeline-track') ||
-        e.target.classList.contains('audio-waveform') ||
-        e.target.classList.contains('wave-bar')) {
-      scrub(e);
-      const onMouseMove = (moveEvent) => scrub(moveEvent);
-      const onMouseUp = () => {
-        window.removeEventListener('mousemove', onMouseMove);
-        window.removeEventListener('mouseup', onMouseUp);
-      };
-      window.addEventListener('mousemove', onMouseMove);
-      window.addEventListener('mouseup', onMouseUp);
-    }
+  document.addEventListener('languagechange', () => {
+    if (active >= 0) renderInspector();
+    renderSound();
   });
 
-  tracksWrapper?.addEventListener('touchstart', (e) => {
-    if (e.target.classList.contains('timeline-tracks-wrapper') || 
-        e.target.classList.contains('timeline-track') ||
-        e.target.classList.contains('audio-waveform') ||
-        e.target.classList.contains('wave-bar')) {
-      scrub(e);
-      const onTouchMove = (moveEvent) => scrub(moveEvent);
-      const onTouchEnd = () => {
-        window.removeEventListener('touchmove', onTouchMove);
-        window.removeEventListener('touchend', onTouchEnd);
-      };
-      window.addEventListener('touchmove', onTouchMove);
-      window.addEventListener('touchend', onTouchEnd);
-    }
-  }, { passive: true });
+  playhead.style.transform = `translateX(${TRACK_LABEL_WIDTH}px)`;
 }
-
-
-
-
-
-
-

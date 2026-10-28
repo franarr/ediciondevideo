@@ -1,0 +1,322 @@
+{
+  "animacion-1": {
+    "source": "animacion_1.mp4",
+    "width": 1280,
+    "height": 720,
+    "duration": 15,
+    "orientation": "horizontal",
+    "size": 1069859
+  },
+  "animacion-2": {
+    "source": "animacion_2.mp4",
+    "width": 1280,
+    "height": 720,
+    "duration": 17,
+    "orientation": "horizontal",
+    "size": 3170810
+  },
+  "antesydespues": {
+    "source": "antesydespues.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 21,
+    "orientation": "vertical",
+    "size": 888567
+  },
+  "arnies-cafe": {
+    "source": "arnies_cafe.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 38,
+    "orientation": "vertical",
+    "size": 2960689
+  },
+  "boyz1": {
+    "source": "boyz1.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 43,
+    "orientation": "vertical",
+    "size": 6119071
+  },
+  "boyz2": {
+    "source": "boyz2.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 20,
+    "orientation": "vertical",
+    "size": 2072498
+  },
+  "cerveza-del-rio": {
+    "source": "cerveza_del_rio.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 93,
+    "orientation": "vertical",
+    "size": 5540494
+  },
+  "consultora-2": {
+    "source": "consultora_2.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 23,
+    "orientation": "vertical",
+    "size": 4626623
+  },
+  "consultora-parte2-ivana": {
+    "source": "consultora_parte2_ivana.mp4",
+    "width": 400,
+    "height": 720,
+    "duration": 92,
+    "orientation": "vertical",
+    "size": 4899284
+  },
+  "consultoria-finan": {
+    "source": "consultoria_finan.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 24,
+    "orientation": "vertical",
+    "size": 6626864
+  },
+  "cosmetica-mendoza-1": {
+    "source": "cosmetica_mendoza_1_.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 31,
+    "orientation": "vertical",
+    "size": 8137291
+  },
+  "de-estrada": {
+    "source": "de_estrada.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 83,
+    "orientation": "vertical",
+    "size": 7201790
+  },
+  "dermapiel-graphic": {
+    "source": "dermapiel_graphic.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 32,
+    "orientation": "vertical",
+    "size": 2627819
+  },
+  "doctor": {
+    "source": "doctor.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 73,
+    "orientation": "vertical",
+    "size": 7480609
+  },
+  "educativo": {
+    "source": "educativo.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 9,
+    "orientation": "vertical",
+    "size": 1991500
+  },
+  "ganar-menos-pero-seguro-o-asumir-riesgos": {
+    "source": "_ganar_menos_pero_seguro_o_asumir_riesgos.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 36,
+    "orientation": "vertical",
+    "size": 7263589
+  },
+  "haciendo-que-artistas-firmen-mis-disenos-hasta-llegar-a-duki": {
+    "source": "haciendo_que_artistas_firmen_mis_disenos_hasta_llegar_a_duki_frozouda_insert_producciones_fr.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 28,
+    "orientation": "vertical",
+    "size": 5547507
+  },
+  "medic": {
+    "source": "medic.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 34,
+    "orientation": "vertical",
+    "size": 7848440
+  },
+  "medico-3": {
+    "source": "medico_3.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 48,
+    "orientation": "vertical",
+    "size": 9130374
+  },
+  "medico1-1": {
+    "source": "medico1_1_.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 46,
+    "orientation": "vertical",
+    "size": 9944404
+  },
+  "medicos-odontologos": {
+    "source": "medicos_odontologos.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 24,
+    "orientation": "vertical",
+    "size": 3930801
+  },
+  "real-state-ia": {
+    "source": "real_state_ia.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 14,
+    "orientation": "vertical",
+    "size": 4279408
+  },
+  "real-state1": {
+    "source": "real_state1.mp4",
+    "width": 1278,
+    "height": 720,
+    "duration": 31,
+    "orientation": "horizontal",
+    "size": 8284010
+  },
+  "real-state2": {
+    "source": "real_state2.mp4",
+    "width": 1278,
+    "height": 720,
+    "duration": 29,
+    "orientation": "horizontal",
+    "size": 3636266
+  },
+  "rodados-reel4": {
+    "source": "rodados_reel4.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 27,
+    "orientation": "vertical",
+    "size": 2981846
+  },
+  "si-pasas-muchas-horas-en-la-misma-posicion-te-dejo-estos-3-e": {
+    "source": "si_pasas_muchas_horas_en_la_misma_posicion_te_dejo_estos_3_ejercicios.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 71,
+    "orientation": "vertical",
+    "size": 10050564
+  },
+  "te-explico-el-fenomeno-de-el-nino-en-30-o-40-segundos": {
+    "source": "te_explico_el_fenomeno_de_el_nino_en_30_o_40_segundos.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 44,
+    "orientation": "vertical",
+    "size": 4357730
+  },
+  "un-ano-con-muchos-desafios": {
+    "source": "un_ano_con_muchos_desafios.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 44,
+    "orientation": "vertical",
+    "size": 7138499
+  },
+  "videeo4": {
+    "source": "videeo4.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 78,
+    "orientation": "vertical",
+    "size": 12314497
+  },
+  "video1": {
+    "source": "video1.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 94,
+    "orientation": "vertical",
+    "size": 11781341
+  },
+  "video2": {
+    "source": "video2.mp4",
+    "width": 716,
+    "height": 1280,
+    "duration": 65,
+    "orientation": "vertical",
+    "size": 13598489
+  },
+  "video3": {
+    "source": "video3.mp4",
+    "width": 716,
+    "height": 1274,
+    "duration": 21,
+    "orientation": "vertical",
+    "size": 5695260
+  },
+  "video5": {
+    "source": "video5.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 37,
+    "orientation": "vertical",
+    "size": 4079221
+  },
+  "video6": {
+    "source": "video6.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 34,
+    "orientation": "vertical",
+    "size": 3539233
+  },
+  "video7": {
+    "source": "video7.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 81,
+    "orientation": "vertical",
+    "size": 4470147
+  },
+  "video8": {
+    "source": "video8.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 32,
+    "orientation": "vertical",
+    "size": 3260875
+  },
+  "video9": {
+    "source": "video9.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 49,
+    "orientation": "vertical",
+    "size": 4462711
+  },
+  "voltra": {
+    "source": "voltra.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 65,
+    "orientation": "vertical",
+    "size": 7636520
+  },
+  "voltra-1": {
+    "source": "voltra_1.mp4",
+    "width": 406,
+    "height": 720,
+    "duration": 36,
+    "orientation": "vertical",
+    "size": 2878489
+  },
+  "whatsapp-video-2026-06-16-at-18-52-55": {
+    "source": "whatsapp_video_2026_06_16_at_18.52.55.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 23,
+    "orientation": "vertical",
+    "size": 2127721
+  }
+}
