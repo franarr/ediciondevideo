@@ -2,7 +2,7 @@
 
 Portfolio de **Alejo Cabaña** y **Francisco Arellano**, editores de video y creadores de contenido de Santa Fe, Argentina.
 
-- Online: https://ediciondevideo.vercel.app (se publica solo al hacer push a `main`)
+- Online: https://cabanayarellano.vercel.app (se publica solo al hacer push a `main`)
 - Stack: Vite + JavaScript, GSAP/ScrollTrigger, Lenis
 - Videos e imágenes: se publican junto con la web en Vercel (plan gratis, sin tarjeta)
 

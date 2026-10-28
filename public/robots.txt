@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ediciondevideo.vercel.app/sitemap.xml
+Sitemap: https://cabanayarellano.vercel.app/sitemap.xml

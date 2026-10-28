@@ -1,7 +1,7 @@
 // ─── Datos de contacto y configuración general ───
 // Todo lo que cambia seguido (teléfonos, links, dominio) vive acá.
 
-export const SITE_URL = 'https://ediciondevideo.vercel.app';
+export const SITE_URL = 'https://cabanayarellano.vercel.app';
 
 // Dónde están los videos y portadas (public/media, se publica junto con la web).
 // Si algún día se mudan a otro hosting, alcanza con definir VITE_MEDIA_BASE_URL.
