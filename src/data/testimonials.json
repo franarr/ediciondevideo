@@ -4,7 +4,6 @@
     "quote": "Amigo, te aplaudo. ¡Qué video! Quedó épico. Hasta portada y todo 🥹",
     "logo": "testimonials/boyz.webp",
     "role": "Indumentaria",
-    "video": "boyz1",
     "source": "WhatsApp"
   },
   {
@@ -12,15 +11,12 @@
     "quote": "Gracias fraaan, quedaron chupetones",
     "logo": "testimonials/boyz.webp",
     "role": "Indumentaria",
-    "image": "testimonials/boyz-captura-julian.webp",
-    "video": "boyz2",
     "source": "WhatsApp"
   },
   {
     "name": "Cluster Media",
     "quote": "El esfuerzo trae recompensa, felicidades equipo. Nunca en la vida había visto tan lleno Arnie’s, ni en días feriado.",
     "role": "Arnie’s Café",
-    "video": "arnies-cafe",
     "source": "WhatsApp"
   },
   {
@@ -37,8 +33,7 @@
     "name": "Buddy Pets",
     "quote": "Excelente",
     "logo": "testimonials/buddy-pets.webp",
-    "role": "Pet Store",
-    "video": "video3"
+    "role": "Pet Store"
   },
   {
     "name": "Kinesio Sosa",
@@ -49,8 +44,7 @@
   {
     "name": "Rodados S.A.",
     "quote": "Quedó buenísimo",
-    "logo": "testimonials/rodados-sa.webp",
-    "video": "rodados-reel4"
+    "logo": "testimonials/rodados-sa.webp"
   },
   {
     "name": "MarketLab",
