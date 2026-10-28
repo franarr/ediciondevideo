@@ -45,6 +45,7 @@
 
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/sections.css">
+  <link rel="stylesheet" href="/src/styles/ambient.css">
 </head>
 <body data-person="{{person}}">
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
@@ -262,53 +263,57 @@
     <!-- ═══════════ NOSOTROS ═══════════ -->
     <section id="nosotros" class="nosotros-section">
       <div class="container">
-        <span class="section-tag" data-i18n="nosotros.tag">[ EL EQUIPO ]</span>
-        <h2 class="section-title nosotros-title" data-i18n="nosotros.title">UN POCO DE NOSOTROS</h2>
+        <div class="nosotros-head">
+          <span class="section-tag" data-i18n="nosotros.tag">[ EL EQUIPO ]</span>
+          <h2 class="section-title nosotros-title" data-i18n="nosotros.title">UN POCO DE NOSOTROS</h2>
+          <p class="section-desc" data-i18n="nosotros.desc">Dos editores, un mismo flujo de trabajo. Nos alternamos las tareas para que siempre haya alguien respondiendo.</p>
+        </div>
 
-        <div class="nosotros-stage">
-          <div class="labels-group" data-person="alejo">
-            <div class="floating-label fl-1" data-i18n="role.comunicador">comunicador</div>
-            <div class="floating-label fl-2">ugc</div>
-            <div class="floating-label fl-3" data-i18n="role.disenador">diseñador</div>
-            <div class="floating-label fl-4 serif-label" data-i18n="role.editor">editor</div>
-            <div class="floating-label fl-5">motion graphics</div>
-            <div class="floating-label fl-6">CAPCUT</div>
-            <div class="floating-label fl-7">REELS</div>
+        <div class="team">
+          <article class="member" data-person="alejo" style="--tone: var(--yellow-marker)">
+            <div class="member-stage">
+              <span class="member-bigname" aria-hidden="true">Alejo</span>
+              <span class="member-blob" aria-hidden="true"></span>
+              <img class="member-photo" src="/images/alejo.webp" alt="Alejo Cabaña" width="760" height="950" loading="lazy" decoding="async">
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Alejo <em class="serif">Cabaña</em></h3>
+              <ul class="member-roles">
+                <li style="--i:0" data-i18n="role.editor">editor</li>
+                <li style="--i:1" data-i18n="role.comunicador">comunicador</li>
+                <li style="--i:2" data-i18n="role.disenador">diseñador</li>
+                <li style="--i:3">UGC</li>
+                <li style="--i:4">motion graphics</li>
+                <li style="--i:5">CapCut</li>
+                <li style="--i:6">reels</li>
+              </ul>
+              <a class="member-ig" href="https://www.instagram.com/alejo.caba/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>@alejo.caba</span></a>
+            </div>
+          </article>
+          <div class="team-link" aria-hidden="true">
+            <span class="team-amp">&amp;</span>
+            <span class="team-place">Santa Fe<br>Argentina</span>
           </div>
-          <div class="labels-group" data-person="francisco">
-            <div class="floating-label fl-1" data-i18n="role.profesor">profesor</div>
-            <div class="floating-label fl-2" data-i18n="role.cartografo">cartógrafo</div>
-            <div class="floating-label fl-3" data-i18n="role.disenador">diseñador</div>
-            <div class="floating-label fl-4 serif-label" data-i18n="role.editor">editor</div>
-            <div class="floating-label fl-5" data-i18n="role.comunicador">comunicador</div>
-            <div class="floating-label fl-6" data-i18n="role.investigador">investigador</div>
-            <div class="floating-label fl-7" data-i18n="role.datos">datos</div>
-          </div>
-
-          <div class="nosotros-photo-wrapper">
-            <figure class="nosotros-photo" data-person="alejo">
-              <img src="/images/alejo.webp" alt="Alejo Cabaña" width="760" height="950" loading="lazy" decoding="async">
-              <figcaption class="photo-name">Alejo Cabaña</figcaption>
-            </figure>
-            <figure class="nosotros-photo" data-person="francisco">
-              <img src="/images/francisco.webp" alt="Francisco Arellano" width="760" height="950" loading="lazy" decoding="async">
-              <figcaption class="photo-name">Francisco Arellano</figcaption>
-            </figure>
-          </div>
-
-          <div class="nosotros-side-arrows" aria-hidden="true">
-            <div class="side-arrow side-left"><span class="side-arrow-tip"></span><span class="side-arrow-line"></span><span>Santa Fe</span></div>
-            <div class="side-arrow side-right"><span class="side-arrow-tip"></span><span class="side-arrow-line"></span><span>Argentina</span></div>
-          </div>
-
-          <div class="nosotros-nav">
-            <button class="nosotros-arrow nosotros-prev magnetic" aria-label="Anterior">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="nosotros-arrow nosotros-next magnetic" aria-label="Siguiente">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
+          <article class="member" data-person="francisco" style="--tone: var(--red-marker)">
+            <div class="member-stage">
+              <span class="member-bigname" aria-hidden="true">Francisco</span>
+              <span class="member-blob" aria-hidden="true"></span>
+              <img class="member-photo" src="/images/francisco.webp" alt="Francisco Arellano" width="760" height="950" loading="lazy" decoding="async">
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Francisco <em class="serif">Arellano</em></h3>
+              <ul class="member-roles">
+                <li style="--i:0" data-i18n="role.editor">editor</li>
+                <li style="--i:1" data-i18n="role.profesor">profesor</li>
+                <li style="--i:2" data-i18n="role.cartografo">cartógrafo</li>
+                <li style="--i:3" data-i18n="role.disenador">diseñador</li>
+                <li style="--i:4" data-i18n="role.comunicador">comunicador</li>
+                <li style="--i:5" data-i18n="role.investigador">investigador</li>
+                <li style="--i:6" data-i18n="role.datos">datos</li>
+              </ul>
+              <a class="member-ig" href="https://www.instagram.com/frann_are/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>@frann_are</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>

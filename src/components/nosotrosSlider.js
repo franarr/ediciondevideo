@@ -1,63 +1,49 @@
 import { gsap } from 'gsap';
+import { prefersReducedMotion } from '../utils/dom';
 
 export function initNosotrosSlider() {
-  const stage = document.querySelector('.nosotros-stage');
-  if (!stage) return;
+  const team = document.querySelector('.team');
+  if (!team) return;
 
   // En las páginas individuales (/alejocabana, /franciscoarellano) solo se muestra esa persona
   const pagePerson = document.body.dataset.person;
-  if (pagePerson) {
-    stage.querySelectorAll(`[data-person]:not([data-person="${pagePerson}"])`).forEach((el) => el.remove());
-    stage.querySelector('.nosotros-nav')?.remove();
-  }
+  if (pagePerson) team.querySelectorAll(`.member:not([data-person="${pagePerson}"])`).forEach((el) => el.remove());
 
-  const photos = [...stage.querySelectorAll('.nosotros-photo')];
-  const labelGroups = [...stage.querySelectorAll('.labels-group')];
-  if (!photos.length) return;
+  if (prefersReducedMotion()) return;
 
-  let current = 0;
-  photos[0].classList.add('active');
-  labelGroups[0]?.classList.add('active');
+  const members = team.querySelectorAll('.member');
 
-  const switchTo = (index) => {
-    if (index === current) return;
-    const [oldPhoto, newPhoto] = [photos[current], photos[index]];
-    const [oldGroup, newGroup] = [labelGroups[current], labelGroups[index]];
+  // Entrada: aparece la mancha, sube la foto y las etiquetas aparecen de a una
+  members.forEach((member, i) => {
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: member, start: 'top 80%' },
+      delay: i * 0.15,
+      defaults: { ease: 'power3.out' },
+    });
+    tl.from(member.querySelector('.member-blob'), { opacity: 0, duration: 0.9 })
+      .from(member.querySelector('.member-photo'), { y: 60, opacity: 0, duration: 0.9 }, '-=0.6')
+      .from(member.querySelector('.member-name'), { y: 20, opacity: 0, duration: 0.6 }, '-=0.5')
+      .from(member.querySelectorAll('.member-roles li'), { opacity: 0, duration: 0.4, stagger: 0.05 }, '-=0.3')
+      .from(member.querySelector('.member-ig'), { opacity: 0, duration: 0.4 }, '-=0.2');
 
-    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-    tl.to(oldGroup.querySelectorAll('.floating-label'), { opacity: 0, duration: 0.2, stagger: 0.02 }, 0)
-      .to(oldPhoto, { opacity: 0, duration: 0.3 }, 0.05)
-      .add(() => {
-        oldPhoto.classList.remove('active');
-        oldGroup.classList.remove('active');
-        newPhoto.classList.add('active');
-        newGroup.classList.add('active');
-        current = index;
-      })
-      .fromTo(newPhoto, { opacity: 0 }, { opacity: 1, duration: 0.4 })
-      .fromTo(
-        newGroup.querySelectorAll('.floating-label'),
-        { opacity: 0 },
-        { opacity: 1, duration: 0.4, stagger: { each: 0.04, from: 'random' } },
-        '<'
-      );
-  };
+    // El nombre gigante se desliza en sentido contrario al scroll
+    gsap.fromTo(
+      member.querySelector('.member-bigname'),
+      { xPercent: i % 2 ? 8 : -8 },
+      {
+        xPercent: i % 2 ? -8 : 8,
+        ease: 'none',
+        scrollTrigger: { trigger: member, start: 'top bottom', end: 'bottom top', scrub: true },
+      }
+    );
+  });
 
-  stage.querySelector('.nosotros-next')?.addEventListener('click', () => switchTo((current + 1) % photos.length));
-  stage.querySelector('.nosotros-prev')?.addEventListener('click', () =>
-    switchTo((current - 1 + photos.length) % photos.length)
-  );
-
-  gsap.fromTo(
-    labelGroups[0].querySelectorAll('.floating-label'),
-    { opacity: 0, y: 10 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      stagger: { each: 0.06, from: 'random' },
-      ease: 'power2.out',
-      scrollTrigger: { trigger: stage, start: 'top 80%' },
-    }
-  );
+  gsap.from(team.querySelector('.team-amp'), {
+    scale: 0.6,
+    opacity: 0,
+    rotate: -20,
+    duration: 0.8,
+    ease: 'back.out(1.7)',
+    scrollTrigger: { trigger: team, start: 'top 70%' },
+  });
 }
