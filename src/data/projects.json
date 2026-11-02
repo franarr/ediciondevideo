@@ -36,6 +36,75 @@
     "viewsSource": "TikTok"
   },
   {
+    "id": "wil-painting-free-estimate",
+    "title": "Wil & Co. Painting · Free estimate",
+    "client": "Wil & Co. Painting",
+    "rubro": "construccion",
+    "featured": true
+  },
+  {
+    "id": "mac-informacion-financiera",
+    "title": "MAC · La información financiera de tu empresa",
+    "client": "MAC Auditores & Consultores",
+    "rubro": "finanzas",
+    "featured": true
+  },
+  {
+    "id": "terreno-plantel-industrial",
+    "title": "Terreno ideal para plantel industrial",
+    "client": "",
+    "rubro": "inmobiliaria"
+  },
+  {
+    "id": "arnies-top-conciertos",
+    "title": "Arnie’s · Top 3 conciertos más recordados",
+    "client": "Arnie’s Café",
+    "rubro": "gastronomia",
+    "featured": true
+  },
+  {
+    "id": "ez-general-construction-cliente",
+    "title": "EZ General Construction · Opinión del cliente",
+    "client": "EZ General Construction",
+    "rubro": "construccion"
+  },
+  {
+    "id": "medico-controles-embarazo",
+    "title": "Salud · Controles durante el embarazo",
+    "client": "",
+    "rubro": "salud"
+  },
+  {
+    "id": "wil-painting-look-at-the-wall",
+    "title": "Wil & Co. Painting · Look at the wall",
+    "client": "Wil & Co. Painting",
+    "rubro": "construccion"
+  },
+  {
+    "id": "apartamentos-inversion",
+    "title": "Apartamentos para invertir en bienes raíces",
+    "client": "",
+    "rubro": "inmobiliaria"
+  },
+  {
+    "id": "mac-inventarios",
+    "title": "MAC · ¿Tus inventarios cuadran?",
+    "client": "MAC Auditores & Consultores",
+    "rubro": "finanzas"
+  },
+  {
+    "id": "terreno-sps-inversion",
+    "title": "Terreno en SPS · Oportunidad de inversión",
+    "client": "",
+    "rubro": "inmobiliaria"
+  },
+  {
+    "id": "wil-painting-cheapest-contract",
+    "title": "Wil & Co. Painting · The cheapest contract",
+    "client": "Wil & Co. Painting",
+    "rubro": "construccion"
+  },
+  {
     "id": "voltra",
     "title": "Voltra · AirPods",
     "client": "Voltra",

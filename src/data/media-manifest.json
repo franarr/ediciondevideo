@@ -23,6 +23,14 @@
     "orientation": "vertical",
     "size": 888567
   },
+  "apartamentos-inversion": {
+    "source": "apartamentos-inversion.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 53,
+    "orientation": "vertical",
+    "size": 8892706
+  },
   "arnies-cafe": {
     "source": "arnies_cafe.mp4",
     "width": 406,
@@ -30,6 +38,14 @@
     "duration": 38,
     "orientation": "vertical",
     "size": 2960689
+  },
+  "arnies-top-conciertos": {
+    "source": "arnies-top-conciertos.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 55,
+    "orientation": "vertical",
+    "size": 8086659
   },
   "auto-city-group": {
     "source": "auto-city-group.mp4",
@@ -135,6 +151,14 @@
     "orientation": "vertical",
     "size": 1991500
   },
+  "ez-general-construction-cliente": {
+    "source": "ez-general-construction-cliente.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 39,
+    "orientation": "vertical",
+    "size": 3447320
+  },
   "ganar-menos-pero-seguro-o-asumir-riesgos": {
     "source": "_ganar_menos_pero_seguro_o_asumir_riesgos.mp4",
     "width": 720,
@@ -151,6 +175,22 @@
     "orientation": "vertical",
     "size": 5547507
   },
+  "mac-informacion-financiera": {
+    "source": "mac-informacion-financiera.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 20,
+    "orientation": "vertical",
+    "size": 2187219
+  },
+  "mac-inventarios": {
+    "source": "mac-inventarios.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 19,
+    "orientation": "vertical",
+    "size": 2234377
+  },
   "medic": {
     "source": "medic.mp4",
     "width": 720,
@@ -166,6 +206,14 @@
     "duration": 48,
     "orientation": "vertical",
     "size": 9130374
+  },
+  "medico-controles-embarazo": {
+    "source": "medico-controles-embarazo.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 35,
+    "orientation": "vertical",
+    "size": 3372322
   },
   "medico1-1": {
     "source": "medico1_1_.mp4",
@@ -246,6 +294,22 @@
     "duration": 44,
     "orientation": "vertical",
     "size": 4357730
+  },
+  "terreno-plantel-industrial": {
+    "source": "terreno-plantel-industrial.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 28,
+    "orientation": "vertical",
+    "size": 5561060
+  },
+  "terreno-sps-inversion": {
+    "source": "terreno-sps-inversion.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 39,
+    "orientation": "vertical",
+    "size": 7128796
   },
   "un-ano-con-muchos-desafios": {
     "source": "un_ano_con_muchos_desafios.mp4",
@@ -350,5 +414,29 @@
     "duration": 23,
     "orientation": "vertical",
     "size": 2127721
+  },
+  "wil-painting-cheapest-contract": {
+    "source": "wil-painting-cheapest-contract.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 23,
+    "orientation": "vertical",
+    "size": 3891522
+  },
+  "wil-painting-free-estimate": {
+    "source": "wil-painting-free-estimate.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 26,
+    "orientation": "vertical",
+    "size": 4018470
+  },
+  "wil-painting-look-at-the-wall": {
+    "source": "wil-painting-look-at-the-wall.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 23,
+    "orientation": "vertical",
+    "size": 3645255
   }
 }

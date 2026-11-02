@@ -52,7 +52,7 @@ Las secciones de casos, testimonios y portadas **se ocultan solas** mientras su 
 
 El orden del archivo es el orden en la web.
 
-**Rubros disponibles:** `salud`, `finanzas`, `inmobiliaria`, `gastronomia`, `belleza`, `indumentaria`, `mascotas`, `vehicular`, `productos`, `educacion`, `marca-personal`, `motion`, `podcast`.
+**Rubros disponibles:** `salud`, `finanzas`, `inmobiliaria`, `gastronomia`, `belleza`, `indumentaria`, `mascotas`, `vehicular`, `productos`, `construccion`, `educacion`, `marca-personal`, `motion`, `podcast`.
 Para agregar uno nuevo, sumá `"rubro.<clave>"` en `src/i18n/es.json`, `en.json` y `pt.json`.
 
 ### Casos de éxito (`cases.json`)
