@@ -15,6 +15,14 @@
     "orientation": "horizontal",
     "size": 3170810
   },
+  "anos-para-quedarse-pobre": {
+    "source": "anos-para-quedarse-pobre.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 59,
+    "orientation": "vertical",
+    "size": 5123719
+  },
   "antesydespues": {
     "source": "antesydespues.mp4",
     "width": 406,
@@ -167,6 +175,14 @@
     "orientation": "vertical",
     "size": 7263589
   },
+  "hablar-bien": {
+    "source": "hablar-bien.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 55,
+    "orientation": "vertical",
+    "size": 5241903
+  },
   "haciendo-que-artistas-firmen-mis-disenos-hasta-llegar-a-duki": {
     "source": "haciendo_que_artistas_firmen_mis_disenos_hasta_llegar_a_duki_frozouda_insert_producciones_fr.mp4",
     "width": 720,
@@ -190,6 +206,14 @@
     "duration": 19,
     "orientation": "vertical",
     "size": 2234377
+  },
+  "meat": {
+    "source": "meat.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 17,
+    "orientation": "vertical",
+    "size": 1621623
   },
   "medic": {
     "source": "medic.mp4",
@@ -287,6 +311,14 @@
     "orientation": "vertical",
     "size": 10050564
   },
+  "sin-carro": {
+    "source": "sin-carro.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 13,
+    "orientation": "vertical",
+    "size": 1313074
+  },
   "te-explico-el-fenomeno-de-el-nino-en-30-o-40-segundos": {
     "source": "te_explico_el_fenomeno_de_el_nino_en_30_o_40_segundos.mp4",
     "width": 720,
@@ -310,6 +342,14 @@
     "duration": 39,
     "orientation": "vertical",
     "size": 7128796
+  },
+  "toyota-corolla": {
+    "source": "toyota-corolla.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 37,
+    "orientation": "vertical",
+    "size": 3366308
   },
   "un-ano-con-muchos-desafios": {
     "source": "un_ano_con_muchos_desafios.mp4",
