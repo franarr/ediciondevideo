@@ -102,5 +102,7 @@
   "nosotros.desc": "Two editors, one workflow. We take turns so there’s always someone answering.",
   "badge.success": "Success story",
   "inspector.views": "Views",
-  "views.label": "views"
+  "views.label": "views",
+  "views.more": "Over",
+  "views.on": "on"
 }

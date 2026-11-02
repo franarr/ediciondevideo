@@ -183,6 +183,22 @@
     "orientation": "vertical",
     "size": 3930801
   },
+  "podcast-peor-error-economico": {
+    "source": "podcast-peor-error-economico.mp4",
+    "width": 720,
+    "height": 1278,
+    "duration": 36,
+    "orientation": "vertical",
+    "size": 5504626
+  },
+  "podcast-red-flag-economica": {
+    "source": "podcast-red-flag-economica.mp4",
+    "width": 720,
+    "height": 1278,
+    "duration": 16,
+    "orientation": "vertical",
+    "size": 1718378
+  },
   "real-state-ia": {
     "source": "real_state_ia.mp4",
     "width": 720,

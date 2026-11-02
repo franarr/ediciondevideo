@@ -1,5 +1,5 @@
 import { projects, rubros, formatDuration } from '../data';
-import { t, formatCompact } from '../i18n/i18n';
+import { t, formatViews, viewsDetail } from '../i18n/i18n';
 import { escapeHtml, isFinePointer } from '../utils/dom';
 import { openLightbox } from './lightbox';
 
@@ -41,7 +41,7 @@ export function initWorkGrid() {
         </span>
         ${p.success ? `<span class="work-badge">★ ${escapeHtml(t('badge.success'))}</span>` : ''}
         <span class="work-duration${p.views ? ' is-top' : ''}">${formatDuration(p.duration)}</span>
-        ${p.views ? `<span class="work-views" title="${escapeHtml(`${p.views.toLocaleString()} ${t('views.label')}`)}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>${formatCompact(p.views)}</span>` : ''}
+        ${p.views ? `<span class="work-views" title="${escapeHtml(viewsDetail(p))}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>${formatViews(p)}</span>` : ''}
       </span>
       <span class="work-info">
         <span class="work-title">${escapeHtml(p.title)}</span>

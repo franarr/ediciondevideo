@@ -102,5 +102,7 @@
   "nosotros.desc": "Dos editores, un mismo flujo de trabajo. Nos alternamos las tareas para que siempre haya alguien respondiendo.",
   "badge.success": "Caso de éxito",
   "inspector.views": "Vistas",
-  "views.label": "reproducciones"
+  "views.label": "reproducciones",
+  "views.more": "Más de",
+  "views.on": "en"
 }

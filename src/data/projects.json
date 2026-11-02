@@ -16,6 +16,26 @@
     "featured": true
   },
   {
+    "id": "podcast-peor-error-economico",
+    "title": "Podcast · El peor error económico de mi vida",
+    "client": "",
+    "rubro": "podcast",
+    "featured": true,
+    "views": 191000,
+    "viewsPlus": true,
+    "viewsSource": "TikTok"
+  },
+  {
+    "id": "podcast-red-flag-economica",
+    "title": "Podcast · La mayor red flag económica en pareja",
+    "client": "",
+    "rubro": "podcast",
+    "featured": true,
+    "views": 170000,
+    "viewsPlus": true,
+    "viewsSource": "TikTok"
+  },
+  {
     "id": "voltra",
     "title": "Voltra · AirPods",
     "client": "Voltra",
@@ -196,7 +216,9 @@
     "title": "El fenómeno de El Niño en 40 segundos",
     "client": "",
     "rubro": "educacion",
-    "featured": true
+    "featured": true,
+    "views": 285000,
+    "viewsSource": "TikTok"
   },
   {
     "id": "un-ano-con-muchos-desafios",

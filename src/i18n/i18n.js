@@ -34,6 +34,20 @@ export const formatCompact = (n) => {
   return currentLang === 'en' ? short : short.replace('.', ',');
 };
 
+/** Contador corto de un video: "+170K" si sigue sumando (viewsPlus) */
+export const formatViews = (item) => `${item.viewsPlus ? '+' : ''}${formatCompact(item.views)}`;
+
+/** Texto largo: "Más de 170.000 reproducciones en TikTok" */
+export const viewsDetail = (item) =>
+  [
+    item.viewsPlus && t('views.more'),
+    item.views.toLocaleString(currentLang === 'en' ? 'en-US' : 'es-AR'),
+    t('views.label'),
+    item.viewsSource && `${t('views.on')} ${item.viewsSource}`,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
 /**
  * Picks the right language from a data field that can be a plain string
  * or an object like { es: '...', en: '...', pt: '...' }.
