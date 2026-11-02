@@ -31,6 +31,14 @@
     "orientation": "vertical",
     "size": 2960689
   },
+  "auto-city-group": {
+    "source": "auto-city-group.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 32,
+    "orientation": "vertical",
+    "size": 5007517
+  },
   "boyz1": {
     "source": "boyz1.mp4",
     "width": 406,

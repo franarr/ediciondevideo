@@ -1,5 +1,12 @@
 [
   {
+    "id": "auto-city-group",
+    "title": "Auto City Group · Autos usados",
+    "client": "Auto City Group",
+    "rubro": "vehicular",
+    "featured": true
+  },
+  {
     "id": "voltra",
     "title": "Voltra · AirPods",
     "client": "Voltra",
