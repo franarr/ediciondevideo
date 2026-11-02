@@ -301,6 +301,11 @@
 }
 @media (max-width: 575px) {
   .testimonial { width: 270px; padding: 1.25rem; }
+  .testimonial blockquote { font-size: 1.02rem; }
+  /* Logo más chico y la fuente ("WhatsApp") en su propia línea, así el nombre no se aprieta */
+  .testimonial figcaption { flex-wrap: wrap; row-gap: 0.4rem; }
+  .testimonial-logo { height: 34px; max-width: 80px; }
+  .testimonial-source { flex-basis: 100%; margin-left: 0; }
 }
 .testimonial-shot {
   width: 100%;

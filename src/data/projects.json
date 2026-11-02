@@ -83,6 +83,20 @@
     "success": true
   },
   {
+    "id": "adivina-negocio-falso-verdadero",
+    "title": "Podcast · ¿Negocio verdadero o falso?",
+    "client": "",
+    "rubro": "podcast",
+    "featured": true
+  },
+  {
+    "id": "contenido-plantilla",
+    "title": "Contenido hecho con plantilla",
+    "client": "",
+    "rubro": "marca-personal",
+    "featured": true
+  },
+  {
     "id": "wil-painting-free-estimate",
     "title": "Wil & Co. Painting · Free estimate",
     "client": "Wil & Co. Painting",

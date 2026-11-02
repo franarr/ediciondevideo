@@ -1,4 +1,12 @@
 {
+  "adivina-negocio-falso-verdadero": {
+    "source": "adivina-negocio-falso-verdadero.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 35,
+    "orientation": "vertical",
+    "size": 4939165
+  },
   "animacion-1": {
     "source": "animacion_1.mp4",
     "width": 1280,
@@ -118,6 +126,14 @@
     "duration": 24,
     "orientation": "vertical",
     "size": 6626864
+  },
+  "contenido-plantilla": {
+    "source": "contenido-plantilla.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 31,
+    "orientation": "vertical",
+    "size": 4630202
   },
   "cosmetica-mendoza-1": {
     "source": "cosmetica_mendoza_1_.mp4",

@@ -323,7 +323,7 @@ body[data-person="francisco"] .team-link { display: none; }
   .video-viewport-container { width: min(250px, 72vw); }
   .video-viewport-container.is-horizontal { width: 100%; }
   .editor-titlebar-text { display: none; }
-  .track-label { width: 64px; min-width: 64px; padding-left: 0.5rem; font-size: 0.55rem; }
+  .track-label { width: 64px; min-width: 64px; padding-left: 0.5rem; font-size: 0.62rem; }
 
   /* Servicios: tarjetas compactas */
   .services-grid { margin-top: 2rem; }
@@ -344,6 +344,19 @@ body[data-person="francisco"] .team-link { display: none; }
   .contact-emails { flex-direction: column; gap: 0.5rem; margin-top: 2.25rem; }
   .email-divider { width: 40px; height: 1px; }
   .contact-footer { line-height: 1.8; padding: 0 1rem; }
+  /* Que el botón flotante de WhatsApp no tape el pie */
+  .contacto-section { padding-bottom: 6rem; }
+
+  /* Nosotros: foto más compacta para no ocupar dos pantallas por persona */
+  .member-stage { max-width: 250px; }
+  .member-bigname { font-size: 3.6rem; }
+
+  /* Tarjetas de trabajos: en 2 columnas no entran la etiqueta y la duración juntas */
+  .work-media:has(.work-badge) .work-duration { display: none; }
+  .work-badge { font-size: 0.58rem; padding: 0.28rem 0.45rem; }
+
+  /* Textos mínimos legibles */
+  .chip-count { font-size: 0.66rem; }
 
   .wa-button { width: 52px; height: 52px; }
 }
