@@ -1,5 +1,5 @@
 import { featuredProjects, formatDuration } from '../data';
-import { t, pick } from '../i18n/i18n';
+import { t, pick, formatCompact } from '../i18n/i18n';
 import { escapeHtml } from '../utils/dom';
 
 // Ancho de la columna de nombres de pista (V1, T, A1): se lee del CSS (más angosta en celular)
@@ -108,6 +108,8 @@ export function initVideoTimeline() {
     $('inspect-rubro').textContent = t(`rubro.${clip.rubro}`);
     $('inspect-format').textContent = t(`format.${clip.orientation}`);
     $('inspect-duration').textContent = formatDuration(clip.duration);
+    $('inspect-views-row').hidden = !clip.views;
+    if (clip.views) $('inspect-views').textContent = `${clip.success ? '★ ' : ''}${formatCompact(clip.views)}`;
     $('active-track-name').textContent = `${clip.id}.mp4`;
 
     const tags = pick(clip.tags) || [];

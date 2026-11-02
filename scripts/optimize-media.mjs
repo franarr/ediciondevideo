@@ -4,7 +4,7 @@
 //   npm run media -- --force → re-procesa todo
 //
 // Salida:
-//   public/media/videos/<id>.mp4    H.264 + AAC, máx. 720p, 30 fps, faststart
+//   public/media/videos/<id>.mp4    H.264 + AAC, máx. 720p, 30 fps, ~1.6 Mbps, faststart
 //   public/media/posters/<id>.webp  frame del segundo 1, para mostrar mientras carga
 //   src/data/media-manifest.json    ancho, alto, duración y orientación de cada video
 //
@@ -74,7 +74,7 @@ for (const file of files) {
 
   const { width, height, kbps, webReady } = probe(input);
   // Nunca superar el bitrate del original (evita que los videos livianos engorden)
-  const maxrate = Math.min(2500, Math.max(400, Math.round(kbps * 0.9)));
+  const maxrate = Math.min(1600, Math.max(400, Math.round(kbps * 0.9)));
   const horizontal = width > height;
   // Escala por el lado corto sin agrandar nunca el original
   const scale = horizontal ? `-2:${Math.min(MAX_SIDE, height)}` : `${Math.min(MAX_SIDE, width)}:-2`;
@@ -86,10 +86,10 @@ for (const file of files) {
       ? ['-c', 'copy']
       : [
           '-vf', `scale=${scale}:flags=lanczos,fps=30`,
-          '-c:v', 'libx264', '-preset', 'slow', '-crf', '24',
+          '-c:v', 'libx264', '-preset', 'slow', '-crf', '27',
           '-maxrate', `${maxrate}k`, '-bufsize', `${maxrate * 2}k`,
           '-profile:v', 'high', '-pix_fmt', 'yuv420p',
-          '-c:a', 'aac', '-b:a', '128k', '-ac', '2',
+          '-c:a', 'aac', '-b:a', '96k', '-ac', '2',
         ]),
     '-map_metadata', '-1',
     '-movflags', '+faststart',

@@ -1,4 +1,4 @@
-import { t } from '../i18n/i18n';
+import { t, formatCompact } from '../i18n/i18n';
 import { escapeHtml } from '../utils/dom';
 
 let dialog, video, caption;
@@ -13,7 +13,8 @@ const render = () => {
   video.classList.toggle('is-horizontal', item.orientation === 'horizontal');
   caption.innerHTML = `
     <strong>${escapeHtml(item.title)}</strong>
-    <span>${escapeHtml([item.client, t(`rubro.${item.rubro}`)].filter(Boolean).join(' · '))}</span>`;
+    <span>${escapeHtml([item.client, t(`rubro.${item.rubro}`)].filter(Boolean).join(' · '))}</span>
+    ${item.success || item.views ? `<span class="lightbox-stats">${item.success ? `★ ${escapeHtml(t('badge.success'))}` : ''}${item.success && item.views ? ' · ' : ''}${item.views ? `${formatCompact(item.views)} ${escapeHtml(t('views.label'))}` : ''}</span>` : ''}`;
   video.play().catch(() => {});
   dialog.querySelectorAll('.lightbox-nav').forEach((b) => (b.hidden = playlist.length < 2));
 };

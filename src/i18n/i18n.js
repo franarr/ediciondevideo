@@ -28,6 +28,12 @@ export const t = (key) => translations[key] ?? es[key] ?? key;
 
 export const getLang = () => currentLang;
 
+/** 60600 → "60,6K" (es, pt) / "60.6K" (en), como lo muestran las redes */
+export const formatCompact = (n) => {
+  const short = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 }).format(n);
+  return currentLang === 'en' ? short : short.replace('.', ',');
+};
+
 /**
  * Picks the right language from a data field that can be a plain string
  * or an object like { es: '...', en: '...', pt: '...' }.

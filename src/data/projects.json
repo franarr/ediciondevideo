@@ -1,5 +1,14 @@
 [
   {
+    "id": "boyz-tenemos-un-problema",
+    "title": "Boyz · Tenemos un problema",
+    "client": "Boyz",
+    "rubro": "indumentaria",
+    "featured": true,
+    "success": true,
+    "views": 60600
+  },
+  {
     "id": "auto-city-group",
     "title": "Auto City Group · Autos usados",
     "client": "Auto City Group",

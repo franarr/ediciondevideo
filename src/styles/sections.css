@@ -506,3 +506,47 @@
   .work-play { width: 40px; height: 40px; margin: -20px 0 0 -20px; }
   .wa-float { right: 1rem; bottom: 1rem; }
 }
+
+/* ─── CASO DE ÉXITO: etiqueta y vistas sobre la tarjeta ─── */
+.work-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 3;
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  background: var(--yellow-marker);
+  padding: 0.3rem 0.55rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+.work-duration.is-top { top: 0.5rem; bottom: auto; }
+.work-views {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.72);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+.lightbox-stats {
+  margin-top: 0.25rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem !important;
+  color: var(--yellow-marker) !important;
+}
+.inspector-row.is-highlight .inspector-value { color: var(--yellow-marker); font-weight: 700; }
