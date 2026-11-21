@@ -526,5 +526,29 @@
     "duration": 23,
     "orientation": "vertical",
     "size": 3645255
+  },
+  "kiosco-golosinas": {
+    "source": "kiosco-golosinas.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 24,
+    "orientation": "vertical",
+    "size": 4815478
+  },
+  "arcor-navidad": {
+    "source": "arcor-navidad.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 20,
+    "orientation": "vertical",
+    "size": 3843733
+  },
+  "arcor-pan-dulce": {
+    "source": "arcor-pan-dulce.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 87,
+    "orientation": "vertical",
+    "size": 14248810
   }
 }

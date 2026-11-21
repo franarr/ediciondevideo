@@ -125,6 +125,27 @@
     "featured": true
   },
   {
+    "id": "kiosco-golosinas",
+    "title": "Kiosco · Cortos de plata",
+    "client": "",
+    "rubro": "productos",
+    "featured": true
+  },
+  {
+    "id": "arcor-navidad",
+    "title": "Arcor · Antes de que lleguen las fiestas",
+    "client": "Arcor",
+    "rubro": "productos",
+    "featured": true
+  },
+  {
+    "id": "arcor-pan-dulce",
+    "title": "Arcor · Pan dulce vs. la otra marca",
+    "client": "Arcor",
+    "rubro": "productos",
+    "featured": true
+  },
+  {
     "id": "wil-painting-free-estimate",
     "title": "Wil & Co. Painting · Free estimate",
     "client": "Wil & Co. Painting",
