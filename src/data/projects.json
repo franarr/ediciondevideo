@@ -97,6 +97,34 @@
     "featured": true
   },
   {
+    "id": "cash-management",
+    "title": "IOL · Cash management",
+    "client": "IOL",
+    "rubro": "finanzas",
+    "featured": true
+  },
+  {
+    "id": "outro",
+    "title": "IOL · Conectá tu cuenta",
+    "client": "IOL",
+    "rubro": "finanzas",
+    "featured": true
+  },
+  {
+    "id": "video-19",
+    "title": "Muebles a medida · ¿De catálogo? No, gracias",
+    "client": "",
+    "rubro": "construccion",
+    "featured": true
+  },
+  {
+    "id": "anim-motion",
+    "title": "Correas extensibles para mascotas",
+    "client": "",
+    "rubro": "mascotas",
+    "featured": true
+  },
+  {
     "id": "wil-painting-free-estimate",
     "title": "Wil & Co. Painting · Free estimate",
     "client": "Wil & Co. Painting",

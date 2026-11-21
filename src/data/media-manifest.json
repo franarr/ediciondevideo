@@ -7,6 +7,14 @@
     "orientation": "vertical",
     "size": 4939165
   },
+  "anim-motion": {
+    "source": "anim-motion.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 44,
+    "orientation": "vertical",
+    "size": 7538852
+  },
   "animacion-1": {
     "source": "animacion_1.mp4",
     "width": 1280,
@@ -94,6 +102,14 @@
     "duration": 20,
     "orientation": "vertical",
     "size": 2072498
+  },
+  "cash-management": {
+    "source": "cash-management.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 35,
+    "orientation": "vertical",
+    "size": 4339914
   },
   "cerveza-del-rio": {
     "source": "cerveza_del_rio.mp4",
@@ -271,6 +287,14 @@
     "orientation": "vertical",
     "size": 3930801
   },
+  "outro": {
+    "source": "outro.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 33,
+    "orientation": "vertical",
+    "size": 4031495
+  },
   "podcast-peor-error-economico": {
     "source": "podcast-peor-error-economico.mp4",
     "width": 720,
@@ -382,6 +406,14 @@
     "duration": 78,
     "orientation": "vertical",
     "size": 12314497
+  },
+  "video-19": {
+    "source": "video-19.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 11,
+    "orientation": "vertical",
+    "size": 1410900
   },
   "video1": {
     "source": "video1.mp4",
